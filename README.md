@@ -4,7 +4,7 @@
 </p>
 <h1 align="center">XIAOMI AOSP SNAPDRAGON PATCH</h1>
 
-
+<h1 align="center">
 ##      PATCH MODULE DESCRIPTION
 
  XIAOMI AOSP SNAPDRAGON PATCH for ARM64 A/AB Generic-System-Images. Unleash the great Potential of Your Xiaomi Snapdragon!
@@ -28,7 +28,7 @@
  OpenGAPPS Super Package for ARM64 / 9.0
  Fully Updated System Apps + Magisk 18.1
 
-
+</h1>
 ##      INCLUDED FEATURES
   
   * FULLY SYSTEMLESS ROM/PATCH MODULE
