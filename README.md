@@ -1,9 +1,8 @@
+<h1 align="center">XASP</h1>
 <p align="center">
   <img src="https://github.com/Miustone/xasp/blob/master/xasp.png">
 </p>
-
-<h1 align="center">XASP 
-XIAOMI AOSP SNAPDRAGON PATCH</h1>
+<h1 align="center">XIAOMI AOSP SNAPDRAGON PATCH</h1>
 
 
 ##      PATCH MODULE DESCRIPTION
