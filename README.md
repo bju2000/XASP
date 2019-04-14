@@ -9,24 +9,27 @@
 
  XIAOMI AOSP SNAPDRAGON PATCH for ARM64 A/AB Generic-System-Images. Unleash the great Potential of Your Xiaomi Snapdragon!
  Everything is Systemless and made as a Magisk Module which means independent Updates for the Base OS and easy Updates for the Patch.
-
-
-##      PATCH MODULE INSTRUCTIONS
- 
-##### Install a GSI/QSSI to Your Device.
-##### Boot the System and don't setup Your Device yet.
-##### Reboot to TWRP and start the FFUHD Patch Installer.
-##### Make Your Choices and wait till the end of the Process.
-##### Reboot to the System and set it up.
-##### Done.
  
 
 ##      MODULE REQUIREMENTS
 
- Android 9.0 / SDK 28 (AOSP GSI FOR A/AB ARM64)
- Snapdragon 835, 845 or 855 (With 4GB+ RAM)
- OpenGAPPS Super Package for ARM64 / 9.0
- Fully Updated System Apps + Magisk 18.1
+##### Android 9.0 / SDK 28 (AOSP ARM64)
+##### Snapdragon 835, 845 or 855 (Min. 4GB RAM)
+##### OpenGAPPS Super Package for ARM64 / 9.0
+##### Fully Updated System Apps + Magisk 18.1
+
+
+##      PATCH MODULE INSTRUCTIONS
+ 
+  * Install a Pie AOSP System and GApps to Your Device.
+  * Boot the System and don't setup Your Device yet.
+  * Reboot to the Recovery and install Magisk 18.1.
+  * Reboot to the System and set it up.
+  * Install the XASP Module in the Magisk Manager or,
+  * Install the XASP Module in the Revovery (Recommended).
+  * Reboot to the Reovery and Wipe the Caches.
+  * Reboot to the System.
+  * Done.
 
 
 ##      INCLUDED FEATURES
@@ -75,6 +78,7 @@
   * ADDED AUDIO CONFIGS FROM XIAOMI, SONY AND LG PIE
   * ADDED YOUTUBE VANCED (DISABLE AUTO UPDATES FOR IT)
   * ADDED NEW SERVICE CONFIGS FROM XIAOMI, SONY AND LG PIE
+  * Much more, check GitHub for Details!
   
 <b>FLUENCE FUHD PATCH V7.1 “Gemini”</b>
   * FIXED NFC ISSUES ON ALL DEVICES
