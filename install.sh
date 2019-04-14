@@ -59,21 +59,8 @@ REPLACE_EXAMPLE="
 
 # Construct your own list here
 REPLACE="
-/system/app/Calculator
-/system/app/DeskClock
-/system/app/Email
-/system/app/FileExplorer
-/system/app/YouTube
-/system/app/MiuiCompass
-/system/app/Notes
-/system/priv-app/Browser
-/system/priv-app/Calendar
-/system/priv-app/Contacts
-/system/priv-app/Mms
-/system/priv-app/MiuiCamera
-/system/priv-app/MiuiGallery
-/system/priv-app/Music
-/system/priv-app/Weather
+/system/priv-app/Dialer
+/system/priv-app/Lawnchair
 "
 
 ##########################################################################################
@@ -90,7 +77,6 @@ print_modname() {
   ui_print "$VERSION"
   ui_print " "
   ui_print "BY $AUTHOR"
-  ui_print " "
   ui_print " "
   unity_main # Don't change this line
 }
