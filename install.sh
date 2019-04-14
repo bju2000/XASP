@@ -59,6 +59,10 @@ REPLACE_EXAMPLE="
 
 # Construct your own list here
 REPLACE="
+/system/app/AudioFX
+/system/app/MusicFX
+/system/priv-app/AudioFX
+/system/priv-app/MusicFX
 /system/priv-app/Dialer
 /system/priv-app/Lawnchair
 "
