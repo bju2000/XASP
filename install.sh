@@ -36,13 +36,19 @@ REPLACE_EXAMPLE="
 
 REPLACE="
 /system/app/AudioFX
+/system/app/Camera
+/system/app/Camera2
+/system/app/Gallery
 /system/app/MusicFX
-/system/app/YouTube
-/system/priv-app/YouTube
 /system/priv-app/AudioFX
-/system/priv-app/MusicFX
+/system/priv-app/Camera
+/system/priv-app/Camera2
+/system/priv-app/Contacts
+/system/priv-app/DocumentsUI
 /system/priv-app/Dialer
+/system/priv-app/Gallery
 /system/priv-app/Lawnchair
+/system/priv-app/MusicFX
 "
 
 print_modname() {

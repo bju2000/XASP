@@ -6,6 +6,10 @@
     <feature name="com.google.android.apps.photos.NEXUS_PRELOAD" />
     <feature name="com.google.android.apps.photos.nexus_preload" />
     <feature name="com.google.android.feature.GOOGLE_BUILD" />
+	
+    <!-- This should declare the version of Exchange that ships -->
+    <feature name="com.google.android.feature.EXCHANGE_6_2" />
+	
     <!-- This should be added to all Nexus and GPe devices -->
     <feature name="com.google.android.feature.GOOGLE_EXPERIENCE" />
 
