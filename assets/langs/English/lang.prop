@@ -1,0 +1,165 @@
+﻿ok = OK
+yes = YES
+no = NO
+done = DONE
+cancel = CANCEL
+tryagain = TRY AGAIN
+exit = EXIT
+about = ABOUT
+continue = CONTINUE
+select = SELECT
+close = CLOSE
+
+canceling = CANCELING...
+finishing = FINISHING...
+calculating = CALCULATING
+discovered = DISCOVERED %s FILES
+deleting = DELETING %s FILES
+moving = MOVING %s OF %s FILES
+copying = COPYING %s OF %s FILES
+progress.of = %s OF %s
+permission.denied = PERMISSIONS DENIED
+
+seconds = SECONDS
+minutes = MINUTES
+hours = HOURS
+remaining = REMAINING
+
+mounting = MOUNTING STORAGE
+umounting = UMOUNTING STORAGE
+exit.message = <u>DO YOUR REALLY WANT TO LEAVE THE FILE MANAGER?</u>
+
+tools.newfolder = NEW FOLDER
+tools.favorite = FAVORITES
+tools.selectall = SELECT ALL
+tools.unselect = UNSELECT
+tools.copy = COPY
+tools.cut = CUT
+tools.paste = PASTE
+tools.menu = MENU
+tools.delete = DELETE
+tools.details = DETAILS
+tools.chmod = CHANGE PERMISSION
+tools.rename = RENAME
+tools.favorite.add = ADD TO FAVORITES
+tools.favorite.del = REMOVE FROM FAVORITES
+tools.hiddenfile = HIDE HIDDEN FILES
+tools.hiddenfile.show = SHOW HIDDEN FILES
+tools.terminal = OPEN TERMINAL
+tools.shell = RUN IN SHELL
+tools.extract = EXTRACT
+
+file.exists = FILE ALREADY EXISTS!
+file.exists.info = THERE IS ALREADY A FILE WITH THE SAME NAME IN THIS LOCATION!
+overwrite.skip = SKIP
+overwrite.skipall = SKIP ALL
+overwrite = OVERWRITE
+overwrite.all = OVERWRITE ALL
+
+disk.full = STORAGE FULL!
+disk.full.info = THIS STORAGE IS FULL! DO YOU WANT TO SKIP THIS FILE?
+disk.full.info2 = THIS STORAGE IS FULL! THE REQUESTED OPERATION IS NOT POSSIBLE!
+
+newfolder = CREATE FOLDER
+newfolder.insertname = INSERT A NEW FOLDER NAME!
+newfolder.exist = THIS FOLDER NAME IS ALREADY EXISTING!\
+\
+TRY AGAIN WITH A ANOTHER NAME!
+
+paste.location = SELECT LOCATION AND PRESS PASTE!
+
+dir.root = ROOT
+dir.filecount = %s FILE
+dir.filecounts = %s FILES
+
+selected.file = %i FILE SELECTED
+selected.files = %i FILES SELECTED
+
+symlink = SYMLINK
+symlink.error = SYMLINK ERROR
+
+settings = SETTINGS
+settings.calib = CALIBRATE SCREEN
+settings.reset = RESET ALL SETTINGS
+
+settings.toolbar = TOOLBAR STYLE
+settings.toolbar.icontext = ICONS AND TEXTS
+settings.toolbar.icononly = ICONS ONLY
+
+settings.fontsize = FONT SIZE
+settings.fontsize.small = SMALL
+settings.fontsize.medium = MEDIUM
+settings.fontsize.big = BIG
+
+settings.colorspace = COLOR SPACE CODE
+settings.colorspace.rgba = RGBA
+settings.colorspace.abgr = ABGR
+settings.colorspace.argb = ARGB
+settings.colorspace.bgra = BGRA
+
+settings.vibration = HAPTIC FEEDBACK
+settings.vibration.none = NO VIBRATIONS
+settings.vibration.low = LOW VIBRATIONS
+settings.vibration.medium = MEDIUM VIBRATIONS
+settings.vibration.high = HARD VIBRATIONS
+
+settings.fontfamily = FONT
+settings.iconset = ICONSET
+settings.themes = THEME
+settings.lang = LANGUAGE
+
+settings.trans = TRANSITION ANIMATIONS
+settings.trans.0 = NO TRANSITIONS
+settings.trans.1 = FAST TRANSITIONS
+settings.trans.2 = NORMAL TRANSITIONS
+settings.trans.3 = SMOOTH TRANSITIONS
+settings.trans.4 = SMOOTH+ TRANSITIONS
+
+settings.mount = MOUNTING CONFIG
+settings.mount.all = AUTOMOUNT ALL STORAGES ON START
+settings.mount.none = NO AUTOMOUNT ON START
+
+settings.reset.msg=ARE YOU SURE YOU WANT TO RESET ALL SETTINGS?
+
+newfolder.error = CAN'T CREATE A NEW FOLDER!
+
+rename = RENAME
+rename.insertname = PLEASE INSERT A NEW NAME TO RENAME THIS FILE!
+rename.exist = THERE IS ALREADY A FILE WITH THE SAME NAME IN THIS LOCATION!\
+\
+TRY AGAIN WITH A ANOTHER NAME!
+rename.error = CAN'T RENAME THIS FILE!
+
+paste.error = PASTE ERROR
+paste.subfolder_paste = THE DESTINATION FOLDER IS A SUBFOLDER OF THE SOURCE FOLDER!\
+\
+TRY TO PASTE IT IN ANOTHER LOCATION!
+paste.nofile = THERE IS NO FILE TO PASTE HERE!
+
+copy.prepare = PREPARING TO COPY
+move.prepare = PREPARING TO MOVE
+delete.prepare = PREPARING TO DELETE
+
+delete.title = DELETE FILE
+delete.message = ARE YOU SURE YOU WANT TO DELETE THIS %s ITEM/S?
+
+extract.error = EXTRACT ERROR
+extract.invalidfile = SELECTED FILE IS NOT VALID ZIP ARCHIVE
+extract.extractfile = EXTRACTING ZIP
+extract.extractof = EXTRACTING %i OF %i
+extract.preparing = PREPARING TO EXTRACT
+extract.cancelmsg = ARE YOU SURE YOU WANT TO CANCEL THE EXTRACTION PROCESS?
+
+tools.chmod.read = READ
+tools.chmod.write = WRITE
+tools.chmod.exec = EXEC
+tools.chmod.user = USER
+tools.chmod.group = GROUP
+tools.chmod.others = OTHERS
+tools.chmod.setuid = SetUID
+tools.chmod.setgid = SetGID
+tools.chmod.sticky = STICKY
+
+tools.terminal.title = TERMINAL
+tools.terminal.terminate = TERMINATE
+tools.terminal.terminate_info = SHELL IS STILL RUNNING... ARE YOU SURE YOU WANT TO TERMINATE IT?

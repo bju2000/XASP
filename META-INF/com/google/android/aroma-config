@@ -1,0 +1,466 @@
+﻿theme("blacknwhite");
+fontresload("0","ttf/android.ttf","12");
+fontresload("1","ttf/android.ttf","12");
+ini_set("dp",                   "6");
+ini_set("transition_frame",     "12");
+ini_set("transition",           "stack");
+ini_set("rom_name",             "XASP");
+ini_set("rom_author",           "MIUSTONE");
+ini_set("rom_device",           "XIAOMI SNAPDRAGON 2017+");
+ini_set("rom_version",          "V19515");
+ini_set("rom_date",             "15.05.2019");
+ini_set("icon_next",            "@next");
+ini_set("icon_back",            "@back");
+ini_set("text_back", 	        "BACK");
+ini_set("text_next",            "NEXT");
+ini_set("text_no",      		"NO");
+ini_set("text_ok", 			    "OK");
+ini_set("text_yes", 	    	"YES");
+ini_set("text_quit", 			"EXIT");
+ini_set("text_about", 			"INFO");
+ini_set("text_quit_msg", 		"DO YOUR REALLY WANT TO LEAVE THE XASP UTILITY?");
+###################
+anisplash(
+3,
+"themes/blacknwhite/1",1,
+"themes/blacknwhite/2",1,
+"themes/blacknwhite/1",1,
+"themes/blacknwhite/2",1,
+"themes/blacknwhite/1",1,
+"themes/blacknwhite/2",1,
+"themes/blacknwhite/1",1,
+"themes/blacknwhite/2",1,
+"themes/blacknwhite/1",1,
+"themes/blacknwhite/2",1,
+"themes/blacknwhite/1",1
+);
+###################
+gotolabel("MENU");
+###################
+menubox(
+"<u>WELCOME</u>",
+"SELECT A OPTION TO START OR PRESS THE 3 DOT MENU FOR MORE...",
+"@none",
+"welcome.prop",
+###################
+"<b>XASP INSTALLER "+ini_get("rom_version")+"</b>","STARTS THE PATCH CONFIGURATION","@welcome",
+"<b>XASP CHANGELOG</b>","SHOWS THE LATEST CHANGELOG","@info",
+"<b>XASP MANAGER</b>","STARTS A ADVANCED FILE MANAGER","@welcome",
+"<b>XASP INFOS</b>","SHOWS ACTUAL DEVICE INFORMATIONS","@info"
+);
+###################
+if prop("welcome.prop","selected")=="2" then
+textbox(
+"<u>CHANGELOG</u>",
+"WELCOME TO THE XASP CHANGELOG",
+"@none",
+resread("changelog.txt")
+);
+back("2");
+endif;
+###################
+if prop("welcome.prop","selected")=="3" then
+restotmp("aromafm.cfg","aromafm.cfg");
+resexec("aromafm.sh");
+resexec("aromafm","1","0",prop("aromafm.prop","ziplocation"));
+back("1");
+endif;
+###################
+if prop("welcome.prop","selected")=="4" then
+pleasewait("COLLECTING INFOS...");
+setvar(
+"INFOS",
+"\n\n" +
+"MODEL:\t\t\t        <b>"+sysprop("ro.product.model")+"</b>\n"+
+"NAME:\t\t\t         <b>"+sysprop("ro.product.name")+"</b>\n"+
+"MANUFACTURER:\t\t   <b>"+sysprop("ro.product.manufacturer")+"</b>\n"+
+"CPU:\t\t\t          <b>"+sysprop("ro.product.cpu.abi")+"</b>\n"+
+"DPI:\t\t\t\t        <b>"+sysprop("ro.sf.lcd_density")+"</b>\n"+
+"SYSTEM SIZE:\t\t\t  <b>"+getdisksize("/system","m")+"MB</b>\n"+
+"SYSTEM FREE:\t\t    <b>"+getdiskfree("/system","m")+"MB</b>\n"+
+"INTERNAL SIZE:\t\t  <b>"+getdisksize("/sdcard","m")+"MB</b>\n"+
+"INTERNAL FREE:\t\t  <b>"+getdiskfree("/sdcard","m")+"MB</b>\n"+
+"SD CARD SIZE:\t\t   <b>"+getdisksize("/external_sd","m")+"MB</b>\n"+
+"SD CARD FREE:\t\t   <b>"+getdiskfree("/external_sd","m")+"MB</b>"
+);
+###################
+textbox(
+"<u>INFOS</u>",
+"WELCOME TO THE DEVICE INFORMATIONS",
+"@info",
+getvar("INFOS")
+);
+back("2");
+endif;
+###################
+ini_set("text_next","START");
+###################
+viewbox(
+"WELCOME THE MAIN PATCH",
+"THE NEXT PAGES WILL CONTAIN ALL PATCH OPTIONS.\n\n"+
+"MAKE YOUR CHOICES BASED ON THE GIVEN SETUP AND YOUR PREFERENCES.\n\n"+
+"THE CONFIGURATION WILL BEGIN AFTER PRESSING <b>'START'</b>. DONT FORGET TO READ THE INSTRUCTIONS BEFORE!",
+"@welcome"
+);
+###################
+ini_set("text_next","NEXT");
+###################
+selectbox(
+"<u>WIPE</u>",
+"MAKE YOUR CHOICE AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
+"@none",
+"wipe.prop",
+###################
+"<u>WHICH WIPE DO YOU WANT TO PERFORM?</u>","",2,
+"<b>COMPLETE WIPE</b>","WIPES EVERYTHING INCLUDING THE INTERNAL STORAGE",0,
+"<b>CLEAN WIPE</b>","WIPES THE ANDROID DATA/APPS/SETTINGS AND CACHES",0,
+"<b>BASIC WIPE</b>","WIPES ONLY THE ANDROID CACHES",1
+);
+###################
+selectbox(
+"<u>BOOT</u>",
+"MAKE YOUR CHOICE AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
+"@none",
+"boot.prop",
+###################
+"<u>WHICH BOOTANIMATION DO YOU WANT TO USE?</u>","",2,
+"<b>BLACK/OEM</b>","DISABLES THE BOOTANIMATION / FASTES BOOT",0,
+"<b>ANDROID</b>","USING THE BASIC ANDROID LOGO / FASTER BOOT",0,
+"<b>GOOGLE PIXEL</b>","USING THE GOOGLE BOOTANIMATION",1,
+"<b>SYSTEM DEFAULT</b>","USING THE DEFAULT BOOTANIMATION",0
+);
+###################
+selectbox(
+"<u>PATCH</u>",
+"MAKE YOUR CHOICES AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
+"@none",
+"patch.prop",
+###################
+"<u>WHICH PROP FILE DO YOU WANT TO INJECT?</u>","",2,
+"<b>XASP PROP</b>","INJECTS THE ORIGINAL XASP PROP FILE",1,
+"<b>CUSTOM PROP</b>","INJECTS A OWN/SHARED PROP FILE FROM YOUR STORAGE",0,
+"<u>WHERE ARE YOUR MICROPHONES PLACED?</u>","",2,
+"<b>TOP AND BOTTOM</b>","ENABLES THE ENDFIRE CONFIG",1,
+"<b>FRONT AND BACK</b>","ENABLES THE BROADSIDE CONFIG",0
+);
+###################
+selectbox(
+"<u>ROOT</u>",
+"MAKE YOUR CHOICE AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
+"@none",
+"root.prop",
+###################
+"<u>WHICH ROOT SOLUTION DO YOU WANT TO USE?</u>","",2,
+"<b>MAGISK STABLE</b>","USING THE LATEST STABLE MAGISK ROOT",0,
+"<b>MAGISK BETA</b>","USING THE LATEST BETA MAGISK ROOT",0,
+"<b>NO ROOT</b>","NO ROOTING IF PRE ROOTED",1
+);
+###################
+selectbox(
+"<u>TRANSFORMATION</u>",
+"MAKE YOUR CHOICES AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
+"@none",
+"transformation.prop",
+###################
+"<u>WHICH DEVICE INFOS DO YOU WANT TO USE?</u>","",2,
+"<b>GOOGLE PIXEL 3 XL</b>","USING THE PIXEL 3 XL DEVICE INFOS",1,
+"<b>GOOGLE PIXEL C</b>","USING THE PIXEL C DEVICE INFOS",0,
+"<b>LG V50</b>","USING THE V50 DEVICE INFOS",0,
+"<b>SONY XPERIA XZ3 </b>","USING THE XPERIA XZ3 DEVICE INFOS",0,
+"<b>HTC U 12+</b>","USING THE U 12+ INFOS",0,
+"<b>SAMSUNG GALAXY S10+ !PLACEHOLDER!+</b>","USING THE GALAXY S10+ DEVICE INFOS",0,
+"<b>ONEPLUS 6T !PLACEHOLDER!</b>","ONEPLUS 6T DEVICE INFOS",0,
+"<b>SYSTEM DEFAULT</b>","USING THE ORIGINAL SYSTEM INFOS",0
+);
+###################
+selectbox(
+"<u>SOUNDS</u>",
+"MAKE YOUR CHOICES AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
+"@none",
+"sounds.prop",
+###################
+"<u>WHICH UI SOUND PACK DO YOU WANT TO USE?</u>","",2,
+"<b>GOOGLE PIXEL 3 XL</b>","USING THE PIXEL 32 XL SOUNDS",1,
+"<b>LG V50</b>","USING THE LG V50 SOUNDS",0,
+"<b>SONY XPERIA XZ3</b>","USING THE XPERIA XZ3 SOUNDS",0,
+"<b>HTC U 12+</b>","USING THE U 12+ SOUNDS",0,
+"<b>SAMSUNG GALAXY S10+ !PLACEHOLDER!</b>","USING THE GALAXY S10+ SOUNDS",0,
+"<b>ONEPLUS 6T !PLACEHOLDER!</b>","ONEPLUS 5S SOUNDS",0,
+"<b>SYSTEM DEFAULT</b>","USING THE ORIGINAL SYSTEM SOUNDS",0,
+"<u>WHICH RINGTONE/ALARM/NOTIFICATION SOUND PACK?</u>","",2,
+"<b>GOOGLE PIXEL 3 XL</b>","USING THE PIXEL 3 XL SOUNDS",0,
+"<b>LG V30</b>","USING THE LG V30 SOUNDS",0,
+"<b>SONY XPERIA XZ3</b>","USING THE XPERIA XZ3 SOUNDS",0,
+"<b>HTC U 12+</b>","USING THE U 12+ SOUNDS",0,
+"<b>SAMSUNG GALAXY S10+</b> !PLACEHOLDER!","USING THE GALAXY S10+ SOUNDS",0,
+"<b>ONEPLUS 6T !PLACEHOLDER!</b>","ONEPLUS 6T SOUNDS",0,
+"<b>ALL</b>","ADDING ALL RINGTONE/ALARM/NOTIFICATION SOUND PACKS",1
+);
+###################
+alert("DPI WARNING","DPI VALUES DEPEND ON THE DISPLAY RESOLUTION. CHOOSE DEFAULT IF YOU'RE UNSURE!", "@none");
+###################
+selectbox(
+"<u>INTERFACE</u>",
+"MAKE YOUR CHOICES AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
+"@none",
+"interface.prop",
+###################
+"<u>WHICH DEVICE UI DO YOU WANT TO USE?</u>","",2,
+"<b>TABLET</b>","DEVICE CHARACTERISTICS WILL BE SET TO 'TABLET'",0,
+"<b>TV</b>","DEVICE CHARACTERISTICS WILL BE SET TO 'TV'",0,
+"<b>WATCH</b>","DEVICE CHARACTERISTICS WILL BE SET TO 'WATCH'",0,
+"<b>PHONE</b>","DEVICE CHARACTERISTICS WILL BE SET TO 'PHONE'",0,
+"<b>SYSTEM DEFAULT</b>","DEVICE CHARACTERISTICS WILL STAY UNTOUCHED",1,
+"<u>WHICH DPI DO YOU WANT TO USE?</u>","",2,
+"<b>TV</b>","DPI WILL BE SET TO 320",0,
+"<b>TABLET</b>","DPI WILL BE SET TO 400",0,
+"<b>PHABLET/TABLET</b>","DPI WILL BE SET TO 480",0,
+"<b>PHABLET</b>","DPI WILL BE SET TO 560",0,
+"<b>PHONE</b>","DPI WILL BE SET TO 640",0,
+"<b>DEFAULT</b>","DPI WILL STAY UNTOUCHED",1
+);
+###################
+selectbox(
+"<u>SYSTEM</u>",
+"MAKE YOUR CHOICES AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
+"@none",
+"system.prop",
+###################
+"<u>XASP SYSTEM</u>","",2,
+"<b>ENABLED</b>","ADDS OPTIMIZED GAPPS AFTER MASSIVE CLEANING",1,
+"<b>DISABLED</b>","CUSTOM CLEANING / OPTIONAL GAPPS ON A EXTRA PAGE",0,
+"<u>XASP KERNEL</u>","",2,
+"<b>ENABLED</b>","ADDS THE HELLSGATE AXON 7 KERNEL",1,
+"<b>DISABLED</b>","NO KERNEL CHANGING / DEFAULT KERNEL",0,
+"<u>XASP AUDIO</u>","",2,
+"<b>ENABLED</b>","ADDS ADVANCED XASP AUDIO SYSTEM ADDITIONS",1,
+"<b>DISABLED</b>","NO EXTRA OPTIMIZATION OF THE AUDIO QUALITY",0,
+"<u>XASP EMOJIS</u>","",2,
+"<b>ENABLED</b>","ADDS EMOJIONE 3.1 EMOJI REPLACEMENT",1,
+"<b>DISABLED</b>","USING THE DEFAULT SYSTEM EMOJIS",0,
+"<u>XASP FONT</u>","",2,
+"<b>ENABLED</b>","ADDS UBUNTU REGULAR AS REPLACEMENT FONT",1,
+"<b>DISABLED</b>","USING THE DEFAULT SYSTEM FONT",0
+);
+###################
+if (prop("system.prop","selected.1")=="1") then
+writetmpfile("debloating.prop",
+"item.1.1=0\n"+
+"item.2.1=0\n"+
+"item.3.1=0\n"+
+"item.4.1=0\n"+
+"item.5.1=0\n"+
+"item.6.1=0\n"+
+"item.7.1=0\n"+
+"item.8.1=0\n"+
+"item.9.1=0\n"+
+"item.10.1=0\n"+
+"item.11.1=0\n"+
+"item.12.1=0\n"+
+"item.13.1=0\n"+
+"item.14.1=0\n"+
+"item.15.1=0\n"+
+"item.16.1=0\n"+
+"item.17.1=0\n"+
+"item.18.1=0\n"+
+"item.19.1=0\n"+
+"item.20.1=0\n"+
+"item.21.1=0\n"
+);
+###################
+endif;
+###################
+if (prop("system.prop","selected.1")=="2") then
+alert("XASP SYSTEM DISABLED","THIS WILL JUST REMOVE NON GOOGLE APPS WITHOUT XASP GAPPS!", "@none");
+checkbox(
+"DE/BLOATING",
+"MAKE YOUR CHOICES AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
+"icons/none",
+"debloating.prop",
+###################
+"<b>HOME LAUNCHERS:</b>","",2,
+"REMOVING","REMOVES ALL SYSTEM LAUNCHER APPS",0,
+"<b>GALARIES:</b>","",2,
+"REMOVING","REMOVES ALL SYSTEM GALARIE APPS",0,
+"<b>MUSIC PLAYERS:</b>","",2,
+"REMOVING","REMOVES ALL SYSTEM MUSIC PLAYER APPS",0,
+"<b>VIDEO PLAYERS:</b>","",2,
+"REMOVING","REMOVES ALL SYSTEM VIDEO PLAYER APPS",0,
+"<b>CAMERAS:</b>","",2,
+"REMOVING","REMOVES ALL SYSTEM CAMERA APPS",0,
+"<b>DIALERS/CONTACTS:</b>","",2,
+"REMOVING","REMOVES ALL SYSTEM DIALER APPS",0,
+"<b>MESSENGERS:</b>","",2,
+"REMOVING","REMOVES ALL SYSTEM MESSENGER APPS",0,
+"<b>EMAILS:</b>","",2,
+"REMOVING","REMOVES ALL SYSTEM EMAIL APPS",0,
+"<b>CLOCKS:</b>","",2,
+"REMOVING","REMOVES ALL SYSTEM CLOCK APPS",0,
+"<b>CALENDARS:</b>","",2,
+"REMOVING","REMOVES ALL SYSTEM CALENDAR APPS",0,
+"<b>CALCULATORS:</b>","",2,
+"REMOVING","REMOVES ALL SYSTEM CALCULATOR APPS",0,
+"<b>BROWSERS:</b>","",2,
+"REMOVING","REMOVES ALL SYSTEM BROWSER APPS",0,
+"<b>AUDIO RECORDER:</b>","",2,
+"REMOVING","REMOVES ALL SYSTEM AUDIO RECORDER APPS",0,
+"<b>AUDIO EQUALIZER:</b>","",2,
+"REMOVING","REMOVES ALL SYSTEM AUDIO EQUALIZER APPS",0,
+"<b>FILEMANAGERS:</b>","",2,
+"REMOVING","REMOVES ALL SYSTEM FILEMANAGER APPS",0,
+"<b>KEYBOARDS:</b>","",2,
+"REMOVING","REMOVES ALL SYSTEM KEYBOARD APPS",0,
+"<b>SIM TOOLKITS:</b>","",2,
+"REMOVING","REMOVES ALL SYSTEM SIM TOOLKIT APPS",0,
+"<b>WIDGETS:</b>","",2,
+"REMOVING","REMOVES ALL SYSTEM WIDGET APPS",0,
+"<b>LIVEWALLPAPERS:</b>","",2,
+"REMOVING","REMOVES ALL SYSTEM LIVEWALLPAPER APPS",0,
+"<b>OEM EXTRA APPS:</b>","",2,
+"REMOVING","REMOVES ALL EXTRA SYSTEM APPS",0,
+"<b>OPTIMIZED XASP GAPPS:</b>","",2,
+"ENABLED","ADDING A SMALL OPTIMIZED SET OF GAPPS",1
+);
+###################
+endif;
+###################
+selectbox(
+"<u>ADDITIONS</u>",
+"MAKE YOUR CHOICES AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
+"@none",
+"additions.prop",
+###################
+"<u>XASP ASSIST PACK</u>","",2,
+"<b>SONY</b>","ADDS ADDITONAL SERVICES FROM SONY",0,
+"<b>HTC</b>","ADDS ADDITONAL SERVICES FROM SONY",0,
+"<b>OFF</b>","NO EXTRA SERVICES WILL BE ADDED",1,
+"<u>XASP APP COLLECTION</u>","",2,
+"<b>ENABLED</b>","ADDING THE FULL COLLECTION",0,
+"<b>DISABLED</b>","ADDING NO APPS AND SKIPING THIS",0,
+"<b>CUSTOM</b>","ALLOWS APP SELECTING ON THE NEXT PAGE",1
+);
+###################
+if (prop("additions.prop","selected.2")=="1") then
+writetmpfile("apps.prop",
+"item.1.1=1\n"+
+"item.1.2=1\n"+
+"item.1.3=1\n"+
+"item.1.4=1\n"+
+"item.1.5=1\n"+
+"item.1.6=1\n"
+);
+###################
+endif;
+###################
+if (prop("additions.prop","selected.2")=="2") then
+writetmpfile("apps.prop",
+"item.1.1=0\n"+
+"item.1.2=0\n"+
+"item.1.3=0\n"+
+"item.1.4=0\n"+
+"item.1.5=0\n"+
+"item.1.6=1\n"
+);
+###################
+endif;
+###################
+if (prop("additions.prop","selected.2")=="3") then
+checkbox(
+"APPS",
+"MAKE YOUR CHOICES AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
+"icons/none",
+"apps.prop",
+###################
+"<b>CHECK THE BOXES TO INCLUDE APPS:</b>","",2,
+"NEUTRALIZER","SMART AND EASY TO USE EQUALIZER REPLACEMENT",0,
+"MORE SHORTCUTS","ACCESS ALL FUNCTIONS OF YOUR ANDROID OS",0,
+"OPEN CAMERA","VERY CUSTOMIZIBLE OPEN SOURCE CAMERA APP",0,
+"MIXPLORER","ONE OF THE BEST FILE AND ZIP MANAGERS",0
+);
+###################
+endif;
+###################
+ini_set("text_next","PATCHING");
+###################
+textbox(
+"<u>READY</u>",
+"THIS IS YOUR LAST CHANCE TO GO BACK OR TO LEAVE THE XASP UTILITY...",
+"@none",
+###################
+"ONCE YOU PRESS <b>'PATCHING'</b> IT WILL START TO PERFORM THE INSTALLATION! "+
+"MAKE SURE YOUR DEVICE ISN'T CHARGING TO PREVENT OVERHEATING AND FREEZING WHILE INSTALLING..."
+);
+###################
+ini_set("text_next","NEXT");
+###################
+install(
+"<u>PATCHING</u>\n",
+"FLASHING NOW THE XIAOMI AOSP SNAPDRAGON PATCH BASED ON YOUR CHOICES. "+
+"IF YOU FACE A DISPLAY FREEZE, JUST WAIT A BIT AND PRESS THE BOTTOM RIGHT EDGE. 4 VIBRATIONS AND YOU ARE BACK IN TWRP!"+
+"THE PATCH/TOOLS AND YOUR CHOICES WILL GET INSTALLED JUST FINE, NO WORRIES...",
+"@none",
+###################
+"<u>PATCHED</u> "+
+"PRESS 'NEXT' TO COMPLETE THE PROCESS..."
+);
+###################
+ini_set("text_next","OK");
+###################
+checkviewbox(
+"<u>COMPLETED</u>",
+"GO BACK TO THE MAIN MENU OR CONTINUE BY PRESSING <b>'OK'</b>",
+"@none",
+###################
+gotolabel("EXIT");
+###################
+"SELECT TO GO BACK TO THE MAIN MENU","0","MENU"
+);
+###################
+if
+getvar("MENU")=="1"
+then
+goto("MENU");
+endif;
+###################
+checkviewbox(
+"<u>COMPLETED</u>",
+"REBOOT TO THE SYSTEM OR CONTINUE BY PRESSING <b>'OK'</b>",
+"@none",
+###################
+"SELECT TO REBOOT TO THE SYSTEM","0","REBOOT1"
+);
+###################
+if
+getvar("REBOOT1")=="1"
+then
+reboot("now");
+endif;
+###################
+checkviewbox(
+"<u>COMPLETED</u>",
+"REBOOT TO THE RECOVERY OR LEAVE THE PATCH BY PRESSING <b>'OK'</b>",
+"@none",
+###################
+"SELECT TO REBOOT TO THE RECOVERY","0","REBOOT2"
+);
+###################
+if
+getvar("REBOOT2")=="1"
+then
+reboot("onfinish","recovery");
+endif;
+###################
+anisplash(
+1,
+"themes/blacknwhite/1",1,
+"themes/blacknwhite/2",1,
+"themes/blacknwhite/1",1,
+"themes/blacknwhite/2",1,
+"themes/blacknwhite/1",1,
+"themes/blacknwhite/2",1,
+"themes/blacknwhite/1",1,
+"themes/blacknwhite/2",1,
+"themes/blacknwhite/1",1,
+"themes/blacknwhite/2",1,
+"themes/blacknwhite/1",1
+);

@@ -1,0 +1,104 @@
+﻿<b>SNAPPATCH 18.3 “FLUTE LOOP”</b>
+Fixed some smaller Bugs and Typos
+Fixed SuperSU by changing encryptable State
+Added Xperia XZ Premium Oreo Sources
+Added back init.d Kernel enabler
+Added new Kernel Settings Script
+Added AR Core & AR Sticker Support
+Added more Sony Assist Content
+Added new Default Resolution and DPI
+Added new Background Functions
+Added new Background Services
+Added Placeholder Hints to Utility
+Updated Snap Prop Patching
+Updated Magisk Stable
+Updated Magisk Beta
+Updated SuperSU
+Updated Axon 7 Kernel
+Updated Patch Changelogs
+Updated Utility Options
+Updated Patch Compression Methode
+Updated Axon 7 Kernel
+Updated Utility AniSplash
+Updated Utility Changelog
+Optimized Axon 7 Kernel
+Optimized Mounting and Cleaning
+Optimized Dalvik VM Dexopt
+Optimized Patch Size / Content
+Optimized Audio System Base
+Optimized Audio System Extra Option
+Optimized Magisk Stable & Beta
+Removed Snap App Collection Content (Not Flashing)
+Added Google Camera Port to App Collection Options
+Added Pixel 2 XL Launcher to App Collection Options
+
+<b>SNAPPATCH 18.2 “LIVIN IT UP”</b>
+Started from Scratch
+Renamed Patch  Project
+Fixed Light Patch Bugs
+Updated Patch Tools
+Updated Utility UI Print
+Updated Utility Options
+Updated Utility AniSplash
+Updated Utility Font / Look
+Updated Utility Main Menu
+Reworked Audio System
+Reworked Audio System Extra Option
+Added more Pixel Features
+Added Device Specific Kernels
+Added more Device Transformation Options
+Added 320 DPI Option
+Added more Device Sound Options
+Added Font Option
+Added Snap Assist Packs
+Added Snap App Collection Options
+Added Debloat Entries for AOSP Oreo
+More but i haven’t cared about Changelogs...
+
+
+<b>CHANGELOG: V1.6 “LAST LIGHT”</b>
+ADDED BACK OPTIMIZED SUPERSU BETA
+ADDED BACK OPTIMIZED SUPERSU STABLE
+ADDED NO-/UNROOT OPTION TO AROMA
+ADDED DISPLAY FREEZE HINT TO AROMA
+ADDED LAWNCHAIR HOME LAUNCHER
+ADDED LAWNFEED FOR LAWNCHAIR
+ADDED VERSION NUMBER TO FILENAME
+ADDED PATCH INFO OPTION TO AROMA
+ADDED AND ENABLED QUALCOMM FOSS
+ADDED HOME LAUNCHER ADDING OPTION
+ADDED WORK/ENTERPRISE MODE SUPPORT 
+ADDED OPTIMIZED SELINUX SWITCH APP
+ADDED PIXEL DATA LIVE WALLPAPERS
+ADDED LOW LATENCY MIC RECORDING/INPUT
+UPDATED LIGHT EXTRAS CONTENT HANDLING
+UPDATED PIXEL XL CONFIG TO PIXEL 2 XL
+UPDATED MAGISK BETA TO 14.3 / 5.4.0
+UPDATED MAGISK STABLE TO 14.0 / 5.4.0
+UPDATED OPTIMIZED OPEN GAPPS
+REMOVED ANDROID 32BIT SUPPORT FILES
+REMOVED XPERIA LIVE WALLPAPER
+REMOVED PIXEL HOME LAUNCHER
+OPTIMIZED MEDIA/VC  VOLUME STEPS TO 30
+OPTIMIZED OPEN GAPPS CONTENT
+OPTIMIZED LIGHT SYSTEM CLEANING
+OPTIMIZED PATCH STRUCTURES / LOGICS
+OPTIMIZED AUDIO QUALITY IN-/OUTPUT
+REMOVED NEUTRALIZER PLAY STORE APP
+REMOVED LG STOCK SPECIFIC ENTRIES
+REMOVED SOME FILES AND ENTRIES
+FIXED VIDEO RECORDING / CAMERA BUGS
+
+<b>CHANGELOG: V1.5</b>
+ADDED ANDROID 8 SUPPORT
+ADDED ANDROID 8 BOOTANIMATION OPTION
+ADDED LIGHT EMOJI OPTIONS TO AROMA
+ADDED MISSING SYSTEM LIBRARIES
+ADDED HEADPHONE SELECTION TO LIGHT AUDIO
+ADDED VERSION NUMBER TO MAIN MENU
+ADDED MAIN MENU AS FIRST AROMA PAGE
+REMOVED OLD FIRST AROMA PAGE
+FORKED PIXEL XL OREO SYSTEM THX jasonsamms666
+UPDATED PIXEL XL SYSTEM FILES
+OPTIMIZED AROMA SCRIPT CONFIG
+FIXED NAVIGATION BAR FORCING
