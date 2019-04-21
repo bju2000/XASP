@@ -10,7 +10,7 @@
   Before You Start: This is not a Mod or a ROM! Don't handle it or call it like that. It's a Patch...
   What You will get from XASP are purely System Optimizations like a Update for existing Android Systems.
   It does add existing and non existing optimized Configurations, Libs, Apps and everyting what a Flagship needs.
-  Why another AOSP ROM with Restrictions? Why another Mod or Module that gives You just Pieces of anything. Try XASP!
+  Why another AOSP ROM with Restrictions? Why another Mod or Module that gives You just Pieces of anything. USE XASP!
   Discover the true Pixel Expierence on any AOSP ROM. Upgrade Your Audio/Visual Quality to a Level that goes beyong Stock.
   Get the optimal Performance in all Conditions. Enjoy great Battery Lifetimes. Unlock unseen Features on all Edges of Android.
   Unleash Your Snapdragon, give it XASP!
