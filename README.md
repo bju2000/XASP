@@ -7,32 +7,25 @@
 
 ##      PATCH MODULE DESCRIPTION
 
-  Welcome to the XASP Project! The Project is aiming on stability and quality while keeping everything efficient and fluid.
-  Based on the Idea of the last Patches from Miustone is this Patch specially made for Xiaomi Devices running the latest AOSP
-  Versions. Giving AOSP the high Quality feeling of Stock, and going far beyond that. The XASP is made as a
-  Magisk Module to use the Benefits of the Systemless handling Method like easy un/installs and independent Updates of the Patch and the OS. 
-  Get edited and optimized Configuration Files, forked Dependencies, and over 900 Propertie Entries from the most actual Snapdragon Flagships. 
-  Enable new Functions and Services, get a better Audio/Visual Input and Output Quality, enable the latest Pixel Device Features, 
-  unlock App Options like in Cameras and experience a good performing and lag free OS. Unleash Your Snapdragon, give it XASP!
- 
-
-##      MODULE REQUIREMENTS
+  Before You Start: This is not a Mod or a ROM! Don't handle it or call it like that. It's a Patch...
+  What You will get from XASP are purely System Optimizations like a Update for existing Android Systems.
+  It does add existing and non existing optimized Configurations, Libs, Apps and everyting what a Flagship needs.
+  Why another AOSP ROM with Restrictions? Why another Mod or Module that gives You just Pieces of anything. Try XASP!
+  Discover the true Pixel Expierence on any AOSP ROM. Upgrade Your Audio/Visual Quality to a Level that goes beyong Stock.
+  Get the optimal Performance in all Conditions. Enjoy great Battery Lifetimes. Unlock unseen Features on all Edges of Android.
+  Unleash Your Snapdragon, give it XASP!
+  
+##      PATCH REQUIREMENTS
 
 ##### Android 9.0 / SDK 28 (AOSP ARM64)
 ##### Snapdragon 835, 845 or 855 (Min. 4GB RAM)
-##### OpenGAPPS Super Package for ARM64 / 9.0
-##### Fully Updated System Apps + Magisk 18.1
 
 
-##      PATCH MODULE INSTRUCTIONS
+##      PATCH INSTRUCTIONS
  
-  * Install a Pie AOSP System and GApps to Your Device.
-  * Boot the System and don't setup Your Device yet.
-  * Reboot to the Recovery and install Magisk 18.1.
-  * Reboot to the System and set it up.
-  * Install the XASP Module in the Magisk Manager or,
-  * Install the XASP Module in the Revovery (Recommended).
-  * Reboot to the Reovery and Wipe the Caches.
+  * Do a Full Wipe in the Ornage Fox Recovery (Caches, Data, System)
+  * Install a Pie AOSP System meeting the Patch Requirements
+  * Install the XASP and make Your Choices in AROMA
   * Reboot to the System.
   * Done.
 
@@ -40,7 +33,9 @@
 ##      INCLUDED FEATURES
   
   * FULLY SYSTEMLESS ROM/PATCH MODULE
-  * BASED ON LATEST UNITY/MAGISK MODULE TEMPLATES
+  * AROMA 3.0 INSTALLER WITH OWN BLACK THEME AND ICONS
+  * AROMA FILE MANAGER WITH OWN BLACK THEME AND ICONS
+  * MAGISK STABLE, BETA AND BUSYBOX INCLUDED
   * BATTERY CALIBRATION AFTER CHARGING
   * FILESYSTEM TRIMMING BASED ON TIMERS
   * SYSTEM WIDE NETWORK OPTIMIZATIONS
@@ -74,6 +69,7 @@
 
 <b>COMING XASP</b>
   * PATCH VERSION NUMBERS CHANGED. CLEAN FLASH NEEDED!
+  * PATCH REBASED AS PATCH INSTEAD OF BEEING A MODULE!
   * WEBSITE UPDATED. MAKE A BOOKMARK! #SURVEY #SUPPORT
   * TRANSLATED LAST PARTS OF FFUHD PATCH TO XASP
   * FIXED BLUETOOTH AUDIO ISSUES ON ALL DEVICES
