@@ -5,7 +5,7 @@
 <h1 align="center">XIAOMI AOSP SNAPDRAGON PATCH</h1>
 
 
-##      PATCH MODULE DESCRIPTION
+##      PATCH DESCRIPTION
 
   Before You Start: This is not a Mod or a ROM! Don't handle it or call it like that. It's a Patch...
   What You will get from XASP are purely System Optimizations like a Update for existing Android Systems.
@@ -32,7 +32,7 @@
 
 ##      INCLUDED FEATURES
   
-  * FULLY SYSTEMLESS ROM/PATCH MODULE
+  * FULLY SAFETYNET PASSING / ALL PLAY STORE ARE APPS WORKING
   * AROMA 3.0 INSTALLER WITH OWN BLACK THEME AND ICONS
   * AROMA FILE MANAGER WITH OWN BLACK THEME AND ICONS
   * MAGISK STABLE, BETA AND BUSYBOX INCLUDED
