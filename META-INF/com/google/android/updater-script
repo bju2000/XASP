@@ -59,7 +59,14 @@ endif;
 if file_getprop("/tmp/aroma-data/boot.prop","selected.1")=="3" then
 ui_print("-GOOGLE PIXEL");
 delete_recursive("/system/media/bootanimation.zip");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/boot","/system/media");
+package_extract_dir("META-INF/com/google/android/aroma/xasp/boot/google","/system/media");
+set_progress(0.09);
+endif;
+###################
+if file_getprop("/tmp/aroma-data/boot.prop","selected.1")=="4" then
+ui_print("-XIAOMI MI");
+delete_recursive("/system/media/bootanimation.zip");
+package_extract_dir("META-INF/com/google/android/aroma/xasp/boot/miui","/system/media");
 set_progress(0.09);
 endif;
 ###################
@@ -88,13 +95,15 @@ endif;
 ###################
 if file_getprop("/tmp/aroma-data/patch.prop","selected.2")=="1" then
 ui_print("-ENDFIRE");
-run_program("/sbin/busybox","sed","-i","/^persist.audio.fluence.mode=/c\\persist.audio.fluence.mode=endfire","/system/build.prop");
+run_program("/sbin/busybox","sed","-i","/^persist.audio.fluence.mode=/c\\persist.audio.fluence.mode=endfire","/system/build.prop"); 
+run_program("/sbin/busybox","sed","-i","/^persist.vendor.audio.fluence.mode=/c\\persist.vendor.audio.fluence.mode=endfire","/system/build.prop");
 set_progress(0.14);
 endif;
 ###################
 if file_getprop("/tmp/aroma-data/patch.prop","selected.2")=="2" then
 ui_print("-BROADSIDE");
 run_program("/sbin/busybox","sed","-i","/^persist.audio.fluence.mode=/c\\persist.audio.fluence.mode=broadside","/system/build.prop");
+run_program("/sbin/busybox","sed","-i","/^persist.vendor.audio.fluence.mode=/c\\persist.vendor.audio.fluence.mode=broadside","/system/build.prop");
 set_progress(0.14);
 endif;
 ###################
@@ -136,165 +145,36 @@ set_progress(0.18);
 endif;
 ###################
 if file_getprop("/tmp/aroma-data/transformation.prop","selected.1")=="2" then
-ui_print("-GOOGLE PIXEL C INFOS");
-run_program("/sbin/busybox","sed","-i","/^ro.product.model=/c\\ro.product.model=Pixel C","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.com.google.clientidbase=/c\\ro.com.google.clientidbase=android-google","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.manufacturer=/c\\ro.product.manufacturer=Google","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.brand=/c\\ro.product.brand=google","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.name=/c\\ro.product.name=ryu","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.device=/c\\ro.product.device=ryu","/system/build.prop");
+ui_print("-XIAOMI MI 9 INFOS");
+run_program("/sbin/busybox","sed","-i","/^ro.product.model=/c\\ro.product.model=MI 9","/system/build.prop");
+run_program("/sbin/busybox","sed","-i","/^ro.com.google.clientidbase=/c\\ro.com.google.clientidbase=android-xiaomi","/system/build.prop");
+run_program("/sbin/busybox","sed","-i","/^ro.product.manufacturer=/c\\ro.product.manufacturer=Xiaomi","/system/build.prop");
+run_program("/sbin/busybox","sed","-i","/^ro.product.brand=/c\\ro.product.brand=Xiaomi","/system/build.prop");
+run_program("/sbin/busybox","sed","-i","/^ro.product.name=/c\\ro.product.name=cepheus","/system/build.prop");
+run_program("/sbin/busybox","sed","-i","/^ro.product.device=/c\\ro.product.device=cepheus","/system/build.prop");
 set_progress(0.18);
 endif;
 ###################
 if file_getprop("/tmp/aroma-data/transformation.prop","selected.1")=="3" then
-ui_print("-LG V50 INFOS");
-run_program("/sbin/busybox","sed","-i","/^ro.product.model=/c\\ro.product.model=Pixel C","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.com.google.clientidbase=/c\\ro.com.google.clientidbase=android-google","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.manufacturer=/c\\ro.product.manufacturer=Google","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.brand=/c\\ro.product.brand=google","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.name=/c\\ro.product.name=ryu","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.device=/c\\ro.product.device=ryu","/system/build.prop");
-set_progress(0.18);
-endif;
-###################
-if file_getprop("/tmp/aroma-data/transformation.prop","selected.1")=="4" then
-ui_print("-SONY XPERIA XZ3 INFOS");
-run_program("/sbin/busybox","sed","-i","/^ro.product.model=/c\\ro.product.model=H9436","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.semc.product.model=/c\\ro.semc.product.model=H9436","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.com.google.clientidbase=/c\\ro.com.google.clientidbase=android-sonymobile","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.com.google.clientidbase.ms=/c\\ro.com.google.clientidbase.ms=android-sonymobile","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.manufacturer=/c\\ro.product.manufacturer=Sony","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.semc.product.name=/c\\ro.semc.product.name=Xperia XZ3","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.brand=/c\\ro.product.brand=Sony","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.name=/c\\ro.product.name=maple_dsds","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.device=/c\\ro.product.device=maple_dsds","/system/build.prop");
-set_progress(0.18);
-endif;
-###################
-if file_getprop("/tmp/aroma-data/transformation.prop","selected.1")=="5" then
-ui_print("-HTC U 12+ INFOS");
-run_program("/sbin/busybox","sed","-i","/^ro.product.model=/c\\ro.product.model=HTC U11","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.brand=/c\\ro.product.brand=htc","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.manufacturer=/c\\ro.product.manufacturer=HTC","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.name=/c\\ro.product.name=ocndugl_00401","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.com.google.clientidbase=/c\\ro.com.google.clientidbase=android-htc","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.device=/c\\ro.product.device=htc_ocndugl","/system/build.prop");
-set_progress(0.18);
-endif;
-###################
-if file_getprop("/tmp/aroma-data/transformation.prop","selected.1")=="6" then
-ui_print("-SAMSUNG GALAXY S10+ INFOS");
-run_program("/sbin/busybox","sed","-i","/^ro.product.model=/c\\ro.product.model=SM-N950F","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.brand=/c\\ro.product.brand=samsung","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.manufacturer=/c\\ro.product.manufacturer=samsung","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.name=/c\\ro.product.name=greatltexx","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.com.google.clientidbase=/c\\ro.com.google.clientidbase=android-samsung","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.device=/c\\ro.product.device=greatlte","/system/build.prop");
-set_progress(0.18);
-endif;
-###################
-if file_getprop("/tmp/aroma-data/transformation.prop","selected.1")=="7" then
-ui_print("-ONEPLUS 6T INFOS");
-run_program("/sbin/busybox","sed","-i","/^ro.product.model=/c\\ro.product.model=SM-N950F","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.brand=/c\\ro.product.brand=samsung","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.manufacturer=/c\\ro.product.manufacturer=samsung","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.name=/c\\ro.product.name=greatltexx","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.com.google.clientidbase=/c\\ro.com.google.clientidbase=android-samsung","/system/build.prop");
-run_program("/sbin/busybox","sed","-i","/^ro.product.device=/c\\ro.product.device=greatlte","/system/build.prop");
-set_progress(0.18);
-endif;
-###################
-if file_getprop("/tmp/aroma-data/transformation.prop","selected.1")=="8" then
 ui_print("-DEFAULT DEVICE INFOS");
 set_progress(0.18);
 endif;
 ###################
 if file_getprop("/tmp/aroma-data/sounds.prop","selected.1")=="1" then
 ui_print("-GOOGLE PIXEL 3 XL UI SOUNDS");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/google/ui","/system/media/audio/ui");
+package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/google","/system/media/audio");
 set_progress(0.19);
 endif;
 ###################
 if file_getprop("/tmp/aroma-data/sounds.prop","selected.1")=="2" then
-ui_print("-LG V50 UI SOUNDS");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/lg/ui","/system/media/audio/ui");
+ui_print("-XIAOMI MI 9 UI SOUNDS");
+package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/miui","/system/media/audio");
 set_progress(0.19);
 endif;
 ###################
 if file_getprop("/tmp/aroma-data/sounds.prop","selected.1")=="3" then
-ui_print("-SONY XPERIA XZ3 UI SOUNDS");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/sony/ui","/system/media/audio/ui");
+ui_print("-DEFAULT UI SOUNDS");
 set_progress(0.19);
-endif;
-###################
-if file_getprop("/tmp/aroma-data/sounds.prop","selected.1")=="4" then
-ui_print("-HTC U 12+ UI SOUNDS");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/htc/ui","/system/media/audio/ui");
-set_progress(0.19);
-endif;
-###################
-if file_getprop("/tmp/aroma-data/sounds.prop","selected.1")=="5" then
-ui_print("-SAMSUNG GALAXY S10+ UI SOUNDS");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/samsung/ui","/system/media/audio/ui");
-set_progress(0.19);
-endif;
-###################
-if file_getprop("/tmp/aroma-data/sounds.prop","selected.1")=="6" then
-ui_print("-ONEPLUS 6T SOUNDS");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/oneplus/ui","/system/media/audio/ui");
-set_progress(0.19);
-endif;
-###################
-if file_getprop("/tmp/aroma-data/sounds.prop","selected.1")=="7" then
-ui_print("-DEFAULT SYSTEM SOUNDS");
-set_progress(0.19);
-endif;
-###################
-if file_getprop("/tmp/aroma-data/sounds.prop","selected.2")=="1" then
-ui_print("-GOOGLE PIXEL 3 XL EXTRA SOUNDS");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/google/extra","/system/media/audio");
-set_progress(0.21);
-endif;
-###################
-if file_getprop("/tmp/aroma-data/sounds.prop","selected.2")=="2" then
-ui_print("-LG V50 EXTRA SOUNDS");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/lg/extra","/system/media/audio");
-set_progress(0.21);
-endif;
-###################
-if file_getprop("/tmp/aroma-data/sounds.prop","selected.2")=="3" then
-ui_print("-SONY XPERIA XZ3 EXTRA SOUNDS");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/sony/extra","/system/media/audio");
-set_progress(0.21);
-endif;
-###################
-if file_getprop("/tmp/aroma-data/sounds.prop","selected.2")=="4" then
-ui_print("-HTC U 12+ EXTRA SOUNDS");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/htc/extra","/system/media/audio");
-set_progress(0.21);
-endif;
-###################
-if file_getprop("/tmp/aroma-data/sounds.prop","selected.2")=="5" then
-ui_print("-SAMSUNG GALAXY S10+ EXTRA SOUNDS");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/samsung/extra","/system/media/audio");
-set_progress(0.21);
-endif;
-###################
-if file_getprop("/tmp/aroma-data/sounds.prop","selected.2")=="6" then
-ui_print("-ONEPLUS 6T EXTRA SOUNDS");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/oneplus/extra","/system/media/audio");
-set_progress(0.21);
-endif;
-###################
-if file_getprop("/tmp/aroma-data/sounds.prop","selected.2")=="7" then
-ui_print("-ALL EXTRA SOUNDS");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/google/extra","/system/media/audio");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/lg/extra","/system/media/audio");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/sony/extra","/system/media/audio");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/htc/extra","/system/media/audio");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/samsung/extra","/system/media/audio");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/oneplus/extra","/system/media/audio");
-set_progress(0.21);
 endif;
 ###################
 ui_print("--INTERFACE");
@@ -330,30 +210,36 @@ set_progress(0.25);
 endif;
 ###################
 if file_getprop("/tmp/aroma-data/interface.prop","selected.2")=="1" then
-ui_print("-TV DPI");
+ui_print("-320 DPI");
 run_program("/sbin/busybox","sed","-i","/^ro.sf.lcd_density=/c\\ro.sf.lcd_density=320","/system/build.prop");
 set_progress(0.27);
 endif;
 ###################
 if file_getprop("/tmp/aroma-data/interface.prop","selected.2")=="2" then
-ui_print("-TABLET DPI");
-run_program("/sbin/busybox","sed","-i","/^ro.sf.lcd_density=/c\\ro.sf.lcd_density=480","/system/build.prop");
+ui_print("-400 DPI");
+run_program("/sbin/busybox","sed","-i","/^ro.sf.lcd_density=/c\\ro.sf.lcd_density=400","/system/build.prop");
 set_progress(0.27);
 endif;
 ###################
 if file_getprop("/tmp/aroma-data/interface.prop","selected.2")=="3" then
-ui_print("-PHABLET DPI");
-run_program("/sbin/busybox","sed","-i","/^ro.sf.lcd_density=/c\\ro.sf.lcd_density=560","/system/build.prop");
+ui_print("-480 DPI");
+run_program("/sbin/busybox","sed","-i","/^ro.sf.lcd_density=/c\\ro.sf.lcd_density=480","/system/build.prop");
 set_progress(0.27);
 endif;
 ###################
 if file_getprop("/tmp/aroma-data/interface.prop","selected.2")=="4" then
-ui_print("-PHONE DPI");
-run_program("/sbin/busybox","sed","-i","/^ro.sf.lcd_density=/c\\ro.sf.lcd_density=640","/system/build.prop");
+ui_print("-560 DPI");
+run_program("/sbin/busybox","sed","-i","/^ro.sf.lcd_density=/c\\ro.sf.lcd_density=560","/system/build.prop");
 set_progress(0.27);
 endif;
 ###################
 if file_getprop("/tmp/aroma-data/interface.prop","selected.2")=="5" then
+ui_print("-640 DPI");
+run_program("/sbin/busybox","sed","-i","/^ro.sf.lcd_density=/c\\ro.sf.lcd_density=640","/system/build.prop");
+set_progress(0.27);
+endif;
+###################
+if file_getprop("/tmp/aroma-data/interface.prop","selected.2")=="6" then
 ui_print("-DEFAULT DPI");
 set_progress(0.27);
 endif;
@@ -658,50 +544,6 @@ package_extract_dir("META-INF/com/google/android/aroma/xasp/gapps","/tmp/gapps")
 set_progress(0.55);
 endif;
 ###################
-if file_getprop("/tmp/aroma-data/system.prop","selected.2")=="1" then
-ui_print("-XASP KERNEL ENABLED");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/kernel","/tmp/kernel");
-set_progress(0.56);
-endif;
-###################
-if file_getprop("/tmp/aroma-data/system.prop","selected.2")=="2" then
-ui_print("-XASP KERNEL DISABLED");
-set_progress(0.56);
-endif;
-###################
-if file_getprop("/tmp/aroma-data/system.prop","selected.3")=="1" then
-ui_print("-XASP AUDIO ENABLED");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/audio","/system");
-set_progress(0.60);
-endif;
-###################
-if file_getprop("/tmp/aroma-data/system.prop","selected.3")=="2" then
-ui_print("-XASP AUDIO DISABLED");
-set_progress(0.60);
-endif;
-###################
-if file_getprop("/tmp/aroma-data/system.prop","selected.4")=="1" then
-ui_print("-XASP EMOJIS ENABLED");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/font/emoji","/system/fonts");
-set_progress(0.63);
-endif;
-###################
-if file_getprop("/tmp/aroma-data/system.prop","selected.4")=="2" then
-ui_print("-XASP EMOJIS DISABLED");
-set_progress(0.63);
-endif;
-###################
-if file_getprop("/tmp/aroma-data/system.prop","selected.4")=="1" then
-ui_print("-XASP FONT ENABLED");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/font/font","/system/fonts");
-set_progress(0.64);
-endif;
-###################
-if file_getprop("/tmp/aroma-data/system.prop","selected.4")=="2" then
-ui_print("-XASP FONT DISABLED");
-set_progress(0.64);
-endif;
-###################
 ui_print("--ADDITIONS");
 set_progress(0.65);
 ###################
@@ -742,22 +584,22 @@ endif;
 ###################
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.1")=="1" then
 ui_print("-NEUTRALIZER APP");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/apps/neutralizerfolder","/system/data-app");
+package_extract_dir("META-INF/com/google/android/aroma/xasp/apps/neutralizerfolder","/system/priv-app");
 endif;
 ###################
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.2")=="1" then
 ui_print("-MORE SHORTCUTS APP");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/apps/moreshortcutsfolder","/system/data-app");
+package_extract_dir("META-INF/com/google/android/aroma/xasp/apps/moreshortcutsfolder","/system/priv-app");
 endif;
 ###################
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.3")=="1" then
 ui_print("-OPEN CAMERA APP");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/apps/opencamerafolder","/system/data-app");
+package_extract_dir("META-INF/com/google/android/aroma/xasp/apps/opencamerafolder","/system/priv-app");
 endif;
 ###################
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.4")=="1" then
 ui_print("-MIXPLORER");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/apps/mixplorerfolder","/system/data-app");
+package_extract_dir("META-INF/com/google/android/aroma/xasp/apps/mixplorerfolder","/system/priv-app");
 endif;
 ###################
 ui_print("---COMPLETE PATCHING");

@@ -53,7 +53,7 @@ ActionsServices         # Install Actions Services
 BetterTogether          # Install Better Together 
 DMAgent                 # Install Google Apps Device Policy
 GCS                     # Install Google Connectivity Services
-ProjectFi               # Install Project Fi
+Hangouts                # Install Hangouts
 
 Exclude
 
