@@ -184,6 +184,12 @@ set_progress(0.19);
 endif;
 ###################
 if file_getprop("/tmp/aroma-data/sounds.prop","selected.1")=="3" then
+ui_print("-RAZER PHONE 2 UI SOUNDS");
+package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/razer","/system/media/audio");
+set_progress(0.19);
+endif;
+###################
+if file_getprop("/tmp/aroma-data/sounds.prop","selected.1")=="4" then
 ui_print("-DEFAULT UI SOUNDS");
 set_progress(0.19);
 endif;
