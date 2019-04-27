@@ -348,6 +348,16 @@ ui_print("-XASP SYSTEM DISABLED");
 set_progress(0.33);
 endif;
 ###################
+if file_getprop("/tmp/aroma-data/system.prop","selected.1")=="1" then
+ui_print("-FLUIDNAVIGATIONGESTURES ENABLED");
+package_extract_dir("META-INF/com/google/android/aroma/xasp/apps/fluidnavigationgesturesfolder","/system/priv-app");
+run_program("/sbin/busybox","sed","-i","/^qemu.hw.mainkeys=/c\\qemu.hw.mainkeys=1","/system/build.prop");
+endif;
+###################
+if file_getprop("/tmp/aroma-data/system.prop","selected.1")=="1" then
+ui_print("-FLUIDNAVIGATIONGESTURES DISABLED");
+endif;
+###################
 if file_getprop("/tmp/aroma-data/debloating.prop","item.1.1")=="1" then
 ui_print("-REMOVING HOME LAUNCHER APPS");
 delete_recursive("/system/priv-app/Trebuchet");
@@ -548,14 +558,20 @@ ui_print("--ADDITIONS");
 set_progress(0.65);
 ###################
 if file_getprop("/tmp/aroma-data/additions.prop","selected.1")=="1" then
-ui_print("-XASP SONY ASSIST PACK");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/assist/sony","/system");
+ui_print("-XASP HTC ASSIST PACK");
+package_extract_dir("META-INF/com/google/android/aroma/xasp/assist/htc","/system");
 set_progress(0.67);
 endif;
 ###################
 if file_getprop("/tmp/aroma-data/additions.prop","selected.1")=="2" then
-ui_print("-XASP HTC ASSIST PACK");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/assist/htc","/system");
+ui_print("-XASP RAZER ASSIST PACK");
+package_extract_dir("META-INF/com/google/android/aroma/xasp/assist/razer","/system");
+set_progress(0.67);
+endif;
+###################
+if file_getprop("/tmp/aroma-data/additions.prop","selected.1")=="3" then
+ui_print("-XASP SONY ASSIST PACK");
+package_extract_dir("META-INF/com/google/android/aroma/xasp/assist/sony","/system");
 set_progress(0.67);
 endif;
 ###################
@@ -599,7 +615,7 @@ endif;
 ###################
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.4")=="1" then
 ui_print("-MIXPLORER");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/apps/mixplorerfolder","/system/priv-app");
+package_extract_dir("META-INF/com/google/android/aroma/xasp/apps/mixplorerfolder","/system/priv-app"); fluidnavigationgesturesfolder
 endif;
 ###################
 ui_print("---COMPLETE PATCHING");
