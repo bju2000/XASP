@@ -1,109 +1,48 @@
 Include
 
-# Pico+
-CalSync                 # Install Google Calendar Sync 
-DialerFramework         # Install Dialer Framework
-GoogleTTS               # Install Google Text-to-Speech
-PackageInstallerGoogle  # Install Google Package Installer
-
-# Nano+
+ActionsServices         # Install Actions Services 
+AndroidAuto             # Install Android Auto 
 BatteryUsage            # Install Device Health Services 
-FaceDetect              # Install Face Detect library for photo apps
-FaceUnlock              # Install FaceUnlock
-Markup                  # Install Markup
-Search                  # Install Google App 
-Speech                  # Install Offline Speech Files
-Wellbeing               # Install Digital Wellbeing 
-
-# Micro+
-CalendarGoogle          # Install Google Calendar
-ExchangeGoogle          # Install Exchange Services
-Gmail                   # Install Gmail
-PixelIcons              # Install Pixel Icons 
-PixelLauncher           # Install Pixel Launcher 
-Wallpapers              # Install Google Wallpapers 
-
-# Mini+
+BetterTogether          # Install Better Together 
+CalSync                 # Install Google Calendar Sync 
 CalculatorGoogle        # Install Google Calculator 
+CalendarGoogle          # Install Google Calendar
 CarrierServices         # Install Carrier Services 
 ClockGoogle             # Install Google Clock
-Messenger               # Install Google Messages 
-Photos                  # Install Google Photos
-TagGoogle               # Install Google Tags 
-
-# Full+
 CloudPrint              # Install Google Cloud Print
-Talkback                # Install Google TalkBack
-
-# Stock+
-AndroidAuto             # Install Android Auto 
 ContactsGoogle          # Install Google Contacts 
+DMAgent                 # Install Google Apps Device Policy
+DialerFramework         # Install Dialer Framework
 DialerGoogle            # Install Google Phone 
 Duo                     # Install Duo
+ExchangeGoogle          # Install Exchange Services
+FaceDetect              # Install Face Detect library for photo apps
+FaceUnlock              # Install FaceUnlock
+GCS                     # Install Google Connectivity Services
+Gmail                   # Install Gmail
 GooglePay               # Install Google Pay
+GoogleTTS               # Install Google Text-to-Speech
+Hangouts                # Install Hangouts
 KeyboardGoogle          # Install Gboard
+Markup                  # Install Markup
+Messenger               # Install Google Messages 
+PackageInstallerGoogle  # Install Google Package Installer
+Photos                  # Install Google Photos
+PixelIcons              # Install Pixel Icons 
+PixelLauncher           # Install Pixel Launcher 
 PrintServiceGoogle      # Install Print Service Recommendation Service 
+Search                  # Install Google App 
+Speech                  # Install Offline Speech Files
 StorageManagerGoogle    # Install Smart Storage 
+TagGoogle               # Install Google Tags 
+Talkback                # Install Google TalkBack
 VRService               # Install Google VR Services 
+Wallpapers              # Install Google Wallpapers 
 WebViewGoogle           # Install Android System Webview 
 WebViewStub             # Install Android System Webview (Stub) 
+Wellbeing               # Install Digital Wellbeing 
 
-# Super+
-ActionsServices         # Install Actions Services 
-BetterTogether          # Install Better Together 
-DMAgent                 # Install Google Apps Device Policy
-GCS                     # Install Google Connectivity Services
-Hangouts                # Install Hangouts
-
-Exclude
-
-CMAccount               # Remove CM Account
-CMAudioFX               # Remove CM AudioFX
-CMBugReport             # Remove CM Bug Report
-CMFileManager           # Remove CM File Manager
-CMMusic                 # Remove CM Music
-CMScreenCast            # Remove CM ScreenCast
-CMSetupWizard           # Remove CM Setup Wizard (see Notes for CMSetupWizard)
-CMUpdater               # Remove CM Updater
-CMWallpapers            # Remove CM Wallpapers
-CMWeatherProvider       # Remove CM Weather Underground
-MusicFX                 # Remove Stock MusicFX
-DashClock               # Remove DashClock Widget (found in certain ROMs)
-Hexo                    # Remove Hexo Libre CM Theme
-LRecorder               # Remove LineageOS Recorder
-LSetupWizard            # Remove LineageOS Setup Wizard
-LUpdater                # Remove LineageOS Updater
-Logcat                  # Remove OmniROM MatLog
-OmniSwitch              # Remove OmniSwitch recent apps switcher replacement
-Browser                 # Remove Stock Browser
-CalculatorStock         # Remove Stock Calculator (automatically removed when Google Calculator is installed)
-CalendarStock           # Remove Stock Calendar (automatically removed when Google Calendar is installed)
-CameraStock             # Remove Stock Camera (Including CAF's camera application, Snap)
-ClockStock              # Remove Stock Desk Clock (automatically removed when Google Clock is installed)
-Dialer                  # Remove Stock Dialer (automatically removed when Google Dialer is installed)
-Email                   # Remove Stock Email Client
-ExchangeStock           # Remove Stock Exchange Services (automatically removed when Google Exchange Services is installed)
-FMRadio                 # Remove Stock FM Radio (not found on all devices or ROMs)
-Gallery                 # Remove Stock Gallery (automatically removed when Google Photos is installed)
-KeyboardStock           # Remove Stock Keyboard (automatically removed when Google Keyboard is installed)
-Launcher                # Remove Stock Launcher(s)
-LockClock               # Remove Stock Lockscreen Clock Widget
-MMS                     # Remove Stock SMS (automatically removed if Android Messages is installed)
-MzFileManager           # Remove Stock FlymeOS File Manager
-MzPay                   # Remove Stock FlymeOS Pay system (this service is only available in China)
-MzSetupWizard           # Remove Stock FlymeOS SetupWizard
-MzUpdater               # Remove Stock FlymeOS Updater
-MzWeather               # Remove Stock FlymeOS Weather (this service is only available in China)
-PicoTTS                 # Remove Stock PicoTTS
-PrintServiceStock       # Remove Stock Print Service Recommendation Service (automatically removed when Google Print Service Recommendation Service is installed)
-SimToolKit              # Remove Stock SimToolKit
-SoundRecorder           # Remove Stock Sound Recorder
-StorageManagerStock     # Remove Stock Storage Manager (automatically removed when Google Storage Manager is installed)
-Studio                  # Remove Stock Movie Studio
-TagStock                # Remove Stock NFC Tags (automatically removed when Google NFC Tags is installed)
-
-
-PreODEX
 GoogleAssistant
-substituteswypelibs
+PreODEX
 forceclean
+substituteswypelibs
