@@ -107,7 +107,7 @@ run_program("/sbin/busybox","sed","-i","/^persist.vendor.audio.fluence.mode=/c\\
 set_progress(0.14);
 endif;
 ###################
-ui_print("--ROOT");
+#ui_print("--ROOT");
 set_progress(0.15);
 ###################
 if file_getprop("/tmp/aroma-data/root.prop","selected.1")=="1" then
@@ -365,13 +365,13 @@ ui_print("-XASP SYSTEM DISABLED");
 set_progress(0.33);
 endif;
 ###################
-if file_getprop("/tmp/aroma-data/system.prop","selected.1")=="1" then
+if file_getprop("/tmp/aroma-data/system.prop","selected.2")=="1" then
 ui_print("-FLUIDNAVIGATIONGESTURES ENABLED");
 package_extract_dir("META-INF/com/google/android/aroma/xasp/apps/fluidnavigationgesturesfolder","/system/priv-app");
 run_program("/sbin/busybox","sed","-i","/^qemu.hw.mainkeys=/c\\qemu.hw.mainkeys=1","/system/build.prop");
 endif;
 ###################
-if file_getprop("/tmp/aroma-data/system.prop","selected.1")=="2" then
+if file_getprop("/tmp/aroma-data/system.prop","selected.2")=="2" then
 ui_print("-FLUIDNAVIGATIONGESTURES DISABLED");
 endif;
 ###################

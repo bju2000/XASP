@@ -145,17 +145,17 @@ selectbox(
 "<b>FRONT AND BACK</b>","ENABLES THE BROADSIDE CONFIG",0
 );
 ###################
-selectbox(
-"<u>ROOT</u>",
-"MAKE YOUR CHOICE AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
-"@none",
-"root.prop",
+#selectbox(
+#"<u>ROOT</u>",
+#"MAKE YOUR CHOICE AND CONTINUE BY PRESSING <b>'NEXT'</b>...",
+#"@none",
+#"root.prop",
 ###################
-"<u>WHICH ROOT SOLUTION DO YOU WANT TO USE?</u>","",2,
-"<b>MAGISK STABLE</b>","USING THE LATEST STABLE MAGISK ROOT",1,
-"<b>MAGISK BETA</b>","USING THE LATEST BETA MAGISK ROOT",0,
-"<b>DEFAULT</b>","ROOTING STATUS WILL STAY UNTOUCHED",0
-);
+#"<u>WHICH ROOT SOLUTION DO YOU WANT TO USE?</u>","",2,
+#"<b>MAGISK STABLE</b>","USING THE LATEST STABLE MAGISK ROOT",1,
+#"<b>MAGISK BETA</b>","USING THE LATEST BETA MAGISK ROOT",0,
+#"<b>DEFAULT</b>","ROOTING STATUS WILL STAY UNTOUCHED",0
+#);
 ###################
 selectbox(
 "<u>TRANSFORMATION</u>",

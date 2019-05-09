@@ -8,8 +8,8 @@ af.resampler.quality=5
 assertdisplay.value=128
 audio.adm.buffering.ms=100
 audio.deep_buffer.media=true
-audio.dolby.ds2.enabled=true
-audio.dolby.ds2.hardbypass=true
+audio.dolby.ds2.enabled=false
+audio.dolby.ds2.hardbypass=false
 audio.ds1.metainfo.key=273
 audio.heap.size.multiplier=1
 audio.hifi_rec.concert_gain=-140
@@ -74,7 +74,7 @@ config.foss.xml=1
 db.log.slow_query_threshold=100
 db.log.slow_query_threshold=100
 debug.bt.discoverable_time=0
-debug.composition.type=mdp
+debug.composition.type=gpu
 debug.cpurend.vsync=true
 debug.doze.component=1
 debug.drm.mode.auto=1
@@ -226,7 +226,6 @@ persist.bt.a2dp.aac_disable=false
 persist.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac
 persist.bt.enableAptXHD=true
 persist.camera.CDS=1
-persist.camera.HAL3.enabled
 persist.camera.HAL3.enabled=1
 persist.camera.ae.capture.bound=7
 persist.camera.ae.instant.bound=7
@@ -277,13 +276,13 @@ persist.camera.ltmforseemore
 persist.camera.mem.usecache
 persist.camera.mem.usepool
 persist.camera.mobicat
-persist.camera.multi_pass
+persist.camera.multi_pass=1
 persist.camera.no-display
 persist.camera.nonzsl.yuv
 persist.camera.offlineraw
-persist.camera.ois.disable
-persist.camera.ois.video
-persist.camera.opt.livepic
+persist.camera.ois.disable=0
+persist.camera.ois.video=1
+persist.camera.opt.livepic=1
 persist.camera.preview.seemore
 persist.camera.preview.ubwc
 persist.camera.preview_raw
@@ -292,8 +291,8 @@ persist.camera.raw.debug.dump
 persist.camera.raw.dump
 persist.camera.raw.format
 persist.camera.raw_yuv
-persist.camera.rdi.mode
-persist.camera.rdimode
+persist.camera.rdi.mode=1
+persist.camera.rdimode=1
 persist.camera.retro.number
 persist.camera.secure.mode
 persist.camera.set.afd
@@ -445,7 +444,7 @@ persist.sys.app_rotation=1
 persist.sys.bootsound=1
 persist.sys.camera.preview.size=2560x1440
 persist.sys.colorgamut.mode=1
-persist.sys.composition.type=mdp
+persist.sys.composition.type=gpu
 persist.sys.cpuset.enable=1
 persist.sys.cpuset.subswitch=0
 persist.sys.dalvik.multithread=true
@@ -1017,8 +1016,8 @@ use.qti.sw.ape.decoder=true
 use.voice.path.for.pcm.voip=true
 vendor.audio.adm.buffering.ms=2
 vendor.audio.adm.buffering.ms=6
-vendor.audio.dolby.ds2.enabled=true
-vendor.audio.dolby.ds2.hardbypass=true
+vendor.audio.dolby.ds2.enabled=false
+vendor.audio.dolby.ds2.hardbypass=false
 vendor.audio.enable.dp.for.voice=true
 vendor.audio.enable.mirrorlink=true
 vendor.audio.flac.sw.decoder.16bit=true
@@ -1034,7 +1033,7 @@ vendor.audio.offload.buffer.size.kb=1024
 vendor.audio.offload.gapless.enabled=true
 vendor.audio.offload.multiaac.enable=true
 vendor.audio.offload.multiple.enabled=true
-vendor.audio.offload.passthrough=true
+vendor.audio.offload.passthrough=false
 vendor.audio.offload.pstimeout.secs=3
 vendor.audio.offload.track.enable=true
 vendor.audio.parser.ip.buffer.size=262144
