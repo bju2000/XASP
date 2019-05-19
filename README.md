@@ -24,10 +24,24 @@
 ##      PATCH INSTRUCTIONS
  
   * Do a full Wipe in the Orange Fox Recovery (Caches, Data, System)
-  * Install a Pie AOSP System meeting the Patch Requirements
+  * Install a Android Pie System meeting the Patch Requirements
   * Install the XASP and make Your Choices in AROMA
-  * Reboot to the System.
+  * Reboot to the System
   * Done.
+  
+  * Optional if AROMA isn't working on Your Device
+  * Install a Android Pie System meeting the Patch Requirements
+  * Install Root / Magisk
+  * Install the FlashFire Application from Chainfire
+  * Check the FlashFire Settings and continue to flashing
+  * Select the XASP Zip and make sure You wipe Data and Caches
+  * Install the XASP and make Your Choices in AROMA
+  * Reboot to the System (One full boot)
+  * Reboot to the Recovery
+  * Install Root / Magisk
+  * Reboot to the System
+  * Done.
+  
 
 
 ##      INCLUDED FEATURES
@@ -70,10 +84,11 @@
 
 ## CHANGELOGS
 
-<b>COMING XASP</b>
+<b>XASP 19515</b>
   * ADDED / PORTED AND ENABLED MIUI FEATURES ON MIUI PIE
   * ADDED / UPDATED LATEST XPERIA 1 LIVEWALLPAPER
   * ADDED / UPDATED LATEST XPERIA LOOPS LIVEWALLPAPER
+  * ADDED / UPDATED DEFAULT XASP HOME LAUNCHER WALLPAPER
   * ADDED AND OPTIMIZED AROMA OPTIONS
   * ADDED AND OPTIMIZED AROMA SITES AND TEXTS
   * ADDED AND OPTIMIZED AUDIO CONFIGS
@@ -88,17 +103,21 @@
   * ADDED GOOGLE PIXEL 3 SYSTEM FILES / CONFIGS
   * ADDED GOOGLES NOW PLAYING FUNCTIONS
   * ADDED GOOGLES VISUAL CORE SERVICE
+  * ADDED MIUI DEVICE OPTIONS (UNIFIED ZIP)
   * ADDED OPTIMIZED SET OF GOOGLE APPS TO AROMA
   * ADDED RAZER PHONE 2 SYSTEM FILES / CONFIGS
   * ADDED VR SUPPORT AND DEPENDENCIES
   * ADDED XIAOMI MI 6 TO SUPPORTED DEVICES
   * ADDED XIAOMI MI 9 TO SUPPORTED DEVICES
+  * ADDED XIAOMI MI MIX 3 TO SUPPORTED DEVICES
   * ADDED XPERIA FLOW OG LIVEWALLPAPER VARIANT 
   * ADDED XPERIA XZ3 SYSTEM FILES / CONFIGS
   * FIXED BLUETOOTH AUDIO ISSUES ON ALL DEVICES
   * PATCH REBASED AS PATCH INSTEAD OF BEEING A MODULE!
   * PATCH VERSION NUMBERS CHANGED. CLEAN FLASH NEEDED!
   * OPTIMIZED GOOGLE APPS FLASH CONFIGURATION
+  * OPTIMIZED AROMA SPLASH ANIMATION
+  * OPTIMIZED GPU RENDERING FOR MIUI
   * REMOVED YOUTUBE VANCED APP AND LIBS
   * TRANSLATED LAST PARTS OF FFUHD PATCH TO XASP
   * WEBSITE UPDATED. MAKE A BOOKMARK! #SURVEY #SUPPORT

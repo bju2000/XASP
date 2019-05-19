@@ -309,6 +309,9 @@ set_progress(0.29);
 ###################
 if file_getprop("/tmp/aroma-data/system.prop","selected.1")=="1" then
 ui_print("-XASP SYSTEM ENABLED");
+delete_recursive("/system/app/MiuiCompass");
+delete_recursive("/system/app/MiuiVideoPlayer");
+delete_recursive("/system/priv-app/Browser");
 delete_recursive("/system/app/Videos");
 delete_recursive("/system/app/Facebook_AppManager");
 delete_recursive("/system/app/Facebook_Instagram_stub");
