@@ -107,7 +107,7 @@ run_program("/sbin/busybox","sed","-i","/^persist.vendor.audio.fluence.mode=/c\\
 set_progress(0.14);
 endif;
 ###################
-#ui_print("--ROOT");
+ui_print("--ROOT");
 set_progress(0.15);
 ###################
 if file_getprop("/tmp/aroma-data/root.prop","selected.1")=="1" then
@@ -632,7 +632,12 @@ endif;
 ###################
 if file_getprop("/tmp/aroma-data/apps.prop","item.1.4")=="1" then
 ui_print("-MIXPLORER");
-package_extract_dir("META-INF/com/google/android/aroma/xasp/apps/mixplorerfolder","/system/priv-app"); fluidnavigationgesturesfolder
+package_extract_dir("META-INF/com/google/android/aroma/xasp/apps/mixplorerfolder","/system/priv-app");
+endif;
+###################
+if file_getprop("/tmp/aroma-data/apps.prop","item.1.5")=="1" then
+ui_print("-POCO LAUNCHER");
+package_extract_dir("META-INF/com/google/android/aroma/xasp/apps/pocolauncherfolder","/system/priv-app");
 endif;
 ###################
 ui_print("---COMPLETE PATCHING");
