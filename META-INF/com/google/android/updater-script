@@ -107,31 +107,74 @@ run_program("/sbin/busybox","sed","-i","/^persist.vendor.audio.fluence.mode=/c\\
 set_progress(0.14);
 endif;
 ###################
-ui_print("--ROOT");
+ui_print("--AOSP/MIUI");
 set_progress(0.15);
+###################
+if file_getprop("/tmp/aroma-data/patch.prop","selected.3")=="2" then
+ui_print("-AOSP");
+set_progress(0.16);
+endif;
+###################
+if file_getprop("/tmp/aroma-data/miui.prop","selected.1")=="1" then
+ui_print("-MI 6");
+package_extract_dir("MIUI/sagit","/system/etc");
+set_progress(0.16);
+endif;
+###################
+if file_getprop("/tmp/aroma-data/miui.prop","selected.1")=="2" then
+ui_print("-MI 8");
+package_extract_dir("MIUI/dipper","/system/etc");
+set_progress(0.16);
+endif;
+###################
+if file_getprop("/tmp/aroma-data/miui.prop","selected.1")=="3" then
+ui_print("-MI 9");
+package_extract_dir("MIUI/cepheus","/system/etc");
+set_progress(0.16);
+endif;
+###################
+if file_getprop("/tmp/aroma-data/miui.prop","selected.1")=="4" then
+ui_print("-MI MIX 2");
+package_extract_dir("MIUI/chiron","/system/etc");
+set_progress(0.16);
+endif;
+###################
+if file_getprop("/tmp/aroma-data/miui.prop","selected.1")=="5" then
+ui_print("-MI MIX 3");
+package_extract_dir("MIUI/perseus","/system/etc");
+set_progress(0.16);
+endif;
+###################
+if file_getprop("/tmp/aroma-data/miui.prop","selected.1")=="6" then
+ui_print("-POCO F1");
+set_progress(0.16);
+endif;
+###################
+ui_print("--ROOT");
+set_progress(0.17);
 ###################
 if file_getprop("/tmp/aroma-data/root.prop","selected.1")=="1" then
 ui_print("-MAGISK STABLE ROOT");
 package_extract_dir("META-INF/com/google/android/aroma/xasp/root/magisk/stable","/tmp/magisk");
 package_extract_dir("META-INF/com/google/android/aroma/xasp/root/busybox","/tmp/busybox");
-set_progress(0.16);
+set_progress(0.18);
 endif;
 ##
 if file_getprop("/tmp/aroma-data/root.prop","selected.1")=="2" then
 ui_print("-MAGISK BETA ROOT");
 package_extract_dir("META-INF/com/google/android/aroma/xasp/root/magisk/beta","/tmp/magisk");
 package_extract_dir("META-INF/com/google/android/aroma/xasp/root/busybox","/tmp/busybox");
-set_progress(0.16);
+set_progress(0.18);
 endif;
 ##
 if file_getprop("/tmp/aroma-data/root.prop","selected.1")=="3" then
 ui_print("-NO ROOT");
 package_extract_dir("META-INF/com/google/android/aroma/xasp/root/busybox","/tmp/busybox");
-set_progress(0.16);
+set_progress(0.18);
 endif;
 ###################
 ui_print("--TRANSFORMATION");
-set_progress(0.17);
+set_progress(0.19);
 ###################
 if file_getprop("/tmp/aroma-data/transformation.prop","selected.1")=="1" then
 ui_print("-GOOGLE PIXEL 3 XL INFOS");
@@ -141,7 +184,7 @@ run_program("/sbin/busybox","sed","-i","/^ro.product.manufacturer=/c\\ro.product
 run_program("/sbin/busybox","sed","-i","/^ro.product.brand=/c\\ro.product.brand=google","/system/build.prop");
 run_program("/sbin/busybox","sed","-i","/^ro.product.name=/c\\ro.product.name=crosshatch","/system/build.prop");
 run_program("/sbin/busybox","sed","-i","/^ro.product.device=/c\\ro.product.device=crosshatch","/system/build.prop");
-set_progress(0.18);
+set_progress(0.20);
 endif;
 ###################
 if file_getprop("/tmp/aroma-data/transformation.prop","selected.1")=="2" then
@@ -152,7 +195,7 @@ run_program("/sbin/busybox","sed","-i","/^ro.product.manufacturer=/c\\ro.product
 run_program("/sbin/busybox","sed","-i","/^ro.product.brand=/c\\ro.product.brand=Xiaomi","/system/build.prop");
 run_program("/sbin/busybox","sed","-i","/^ro.product.name=/c\\ro.product.name=cepheus","/system/build.prop");
 run_program("/sbin/busybox","sed","-i","/^ro.product.device=/c\\ro.product.device=cepheus","/system/build.prop");
-set_progress(0.18);
+set_progress(0.20);
 endif;
 ###################
 if file_getprop("/tmp/aroma-data/transformation.prop","selected.1")=="3" then
@@ -163,35 +206,35 @@ run_program("/sbin/busybox","sed","-i","/^ro.product.manufacturer=/c\\ro.product
 run_program("/sbin/busybox","sed","-i","/^ro.product.brand=/c\\ro.product.brand=razer","/system/build.prop");
 run_program("/sbin/busybox","sed","-i","/^ro.product.name=/c\\ro.product.name=cheryl2","/system/build.prop");
 run_program("/sbin/busybox","sed","-i","/^ro.product.device=/c\\ro.product.device=aura","/system/build.prop");
-set_progress(0.18);
+set_progress(0.20);
 endif;
 ###################
 if file_getprop("/tmp/aroma-data/transformation.prop","selected.1")=="3" then
 ui_print("-DEFAULT DEVICE INFOS");
-set_progress(0.18);
+set_progress(0.20);
 endif;
 ###################
 if file_getprop("/tmp/aroma-data/sounds.prop","selected.1")=="1" then
 ui_print("-GOOGLE PIXEL 3 XL UI SOUNDS");
 package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/google","/system/media/audio");
-set_progress(0.19);
+set_progress(0.21);
 endif;
 ###################
 if file_getprop("/tmp/aroma-data/sounds.prop","selected.1")=="2" then
 ui_print("-XIAOMI MI 9 UI SOUNDS");
 package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/miui","/system/media/audio");
-set_progress(0.19);
+set_progress(0.21);
 endif;
 ###################
 if file_getprop("/tmp/aroma-data/sounds.prop","selected.1")=="3" then
 ui_print("-RAZER PHONE 2 UI SOUNDS");
 package_extract_dir("META-INF/com/google/android/aroma/xasp/sounds/razer","/system/media/audio");
-set_progress(0.19);
+set_progress(0.21);
 endif;
 ###################
 if file_getprop("/tmp/aroma-data/sounds.prop","selected.1")=="4" then
 ui_print("-DEFAULT UI SOUNDS");
-set_progress(0.19);
+set_progress(0.21);
 endif;
 ###################
 ui_print("--INTERFACE");

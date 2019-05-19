@@ -92,6 +92,8 @@
     <bool name="support_agps_paras">true</bool>
     <!--whether the device supports agps roaming-->
     <bool name="support_agps_roaming">true</bool>
+    <!-- Support Android Flashlight Controller -->
+    <bool name="support_android_flashlight">true</bool>
     <!--whether the device supports IR-->
     <bool name="support_ir">true</bool>
     <!-- Support Dual Gps-->
@@ -208,6 +210,8 @@
     <bool name="support_edge_handgrip">false</bool>
     <!--wheater support validate device when syste upadte -->
     <bool name="support_ota_validate">true</bool>
+    <!-- whether support LDAC -->
+    <bool name="support_ldac">true</bool>
     <!--whether show my device-->
     <bool name="support_my_device">true</bool>
     <!--whether round corner-->
@@ -225,7 +229,9 @@
     <!--0:not support 1:close gamut 2:close ce-->
     <integer name="screen_standard_mode">1</integer>
     <!--the max level for paper mode -->
-    <float name="paper_mode_max_level">32.0</float>
+    <float name="paper_mode_max_level">255.0</float>
+    <!--The value of papar min level-->
+    <float name="paper_mode_min_level">58.0</float>
     <!--Flag of reduce preview size in camera(1:reduce, 0:do not reduce; 1st byte:rear camera, 2nd byte:front camera, 3rd byte:rear video, 4th byte:front video )-->
     <integer name="camera_reduce_preview_flag">14</integer>
     <!--max number of burst images one time -->
@@ -238,11 +244,38 @@
     <integer name="cpu_max_freq">235</integer>
     <!--Successful flag of camera continuous auto focus  result-->
     <integer name="camera_focus_success_flag">2</integer>
+    <!--hidden app packagename list -->
+    <string-array name="hidden_app_packagename_list">
+        <item>com.xiaomi.market</item>
+        <item>com.duokan.reader</item>
+        <item>com.xiaomi.channel</item>
+        <item>com.yidian.xiaomi</item>
+        <item>com.xiaomi.o2o</item>
+        <item>com.xiaomi.smarthome</item>
+        <item>com.wali.live</item>
+        <item>com.xiaomi.jr</item>
+        <item>com.mipay.wallet</item>
+        <item>com.xiaomi.youpin</item>
+    </string-array>
+    <!--hidden app path list -->
+    <string-array name="hidden_app_path_list">
+        <item>/system/app/MiuiSuperMarket.apk,/system/app/MiuiSuperMarket</item>
+        <item>/data/app/partner-com.duokan.reader.apk,/data/app/partner-com.duokan.reader</item>
+        <item>/data/app/partner-MiTalk.apk,/data/app/customized-partner-MiTalk.apk,/data/app/partner-MiTalk,/data/app/customized-partner-MiTalk</item>
+        <item>/data/app/partner-Zixun.apk,/data/app/partner-Zixun,/data/app/ota-partner-Zixun.apk,/data/app/ota-partner-Zixun</item>
+        <item>/data/app/O2O.apk,/data/app/O2O</item>
+        <item>/data/app/ota-miui-XiaomiSmartHome.apk,/data/app/ota-miui-XiaomiSmartHome</item>
+        <item>/data/app/WaliLive.apk,/data/app/WaliLive</item>
+        <item>/data/app/MiFinance.apk,/data/app/MiFinance</item>
+        <item>/system/app/Mipay.apk,/system/app/Mipay</item>
+        <item>/cust/app/customized/partner-YouPin/partner-YouPin.apk,/cust/app/customized/partner-YouPin</item>
+    </string-array>
     <!--total steps number of camera compensation-->
     <float name="camera_exposure_compensation_steps_num">12.0</float>
     <!--Left margin of count down parent layout for front camera-->
     <float name="camera_front_count_down_margin">-0.8546</float>
     <bool name="front_fingerprint_sensor">false</bool>
+    <bool name="support_parallel_process">true</bool>
     <!--whether the device supports smart cover with small window-->$
     <bool name="support_small_win_cover">false</bool>
     <!--0: x7 type; 1: A1 type -->
@@ -287,6 +320,17 @@
     <bool name="support_se_route">true</bool>
     <!--whether the device supports screen key position swap-->
     <bool name="support_screen_key_swap">true</bool>
+    <!--These app has permission to access aux camera -->
+    <string-array name="camera_aux_package_list">
+        <item>org.codeaurora.snapcam</item>
+        <item>com.android.camera</item>
+        <item>com.miui.cit</item>
+        <item>com.qualcomm.qti.qmmi</item>
+        <item>com.android.keyguard</item>
+        <item>com.android.systemui</item>
+        <item>com.phonetest.application</item>
+        <item>com.phonetest.application.test</item>
+    </string-array>
     <!--still beautify value for 3rd party call-->
     <string name="extra_still_beautify_value">i:2</string>
     <!--min previewsize value for video call case-->
@@ -296,6 +340,10 @@
     <bool name="support_led_color">true</bool>
     <bool name="support_audio_loopback">true</bool>
 	<bool name="support_new_silentmode">true</bool>
+    <!-- whether CN hardware can flash Global rom -->
+    <bool name="enable_flash_global">true</bool>
+    <!-- Support Sign Verify In Cust Partition-->
+    <bool name="support_sign_verify_in_cust">true</bool>
     <!--Add for the system data-app which could uninstall by user-->
     <string-array name="system_data_packagename_list">
         <item>com.xiaomi.pass</item>
@@ -340,6 +388,8 @@
     </string-array>
     <!-- whether camera support AI lens entry -->
     <bool name="camera_support_ai_lens">true</bool>
+    <!--whether battery led default value on-->
+    <bool name="default_battery_led_on">false</bool>
     <!--whether surpport paper mode animation-->
     <bool name="support_papermode_animation">true</bool>
     <!--whether paper mode and screen effect is compatible-->
@@ -370,6 +420,12 @@
     <bool name="is_support_portrait">true</bool>
     <!--whether taking legacy face beauty in camera-->
     <bool name="is_legacy_face_beauty">false</bool>
+    <!--whether taking 18x9 ratio screen in camera-->
+    <bool name="is_18x9_ratio_screen">true</bool>
+    <!--whether support add watermark on bottom left of picture-->
+    <bool name="support_picture_watermark">true</bool>
+    <!--whether front camera support bokeh or not-->
+    <bool name="support_front_bokeh">true</bool>
     <!--whether front camera support mfnr with face beauty-->
     <bool name="support_front_beauty_mfnr">true</bool>
     <!--whether camera support portrait mode switch -->
@@ -382,6 +438,8 @@
     <bool name="support_super_resolution">true</bool>
     <!--whether camera support front flash-->
     <bool name="support_front_flash">true</bool>
+    <!--whether support psensor in pocket mode (true by default)-->
+    <bool name="support_psensor_pocket_mode">true</bool>
     <!--whether camera support realtime manual exposure time-->
     <bool name="support_realtime_manual_exposure_time">true</bool>
     <!-- whether disable always discoverable -->
@@ -389,6 +447,8 @@
     <!-- whether support bluetooth fast startup -->
     <bool name="support_bluetooth_boost">true</bool>
     <string name="bluetooth_boost_value">0x000011C0</string>
+    <!-- Support ARCore, This feature is subjected to change if google defines a standard feature.-->
+    <bool name="support_ar_core">true</bool>
     <!-- whether support fast connect bluetooth device -->
     <bool name="support_bluetooth_fast_connect">true</bool>
     <!-- whether support ai task button -->
@@ -403,6 +463,7 @@
     <bool name="support_extreme_battery_saver">true</bool>
     <!--These region support face unlock-->
     <string-array name="support_face_unlock_region_global">
+        <item>ID</item>
         <item>IN</item>
         <item>ID</item>
         <item>RU</item>
@@ -413,9 +474,38 @@
         <item>SG</item>
         <item>MY</item>
         <item>VN</item>
+        <item>TH</item>
+        <item>IT</item>
+        <item>FR</item>
+        <item>NP</item>
+        <item>LK</item>
+        <item>BD</item>
+        <item>QA</item>
+        <item>BE</item>
+        <item>DK</item>
+        <item>GR</item>
+        <item>GB</item>
+        <item>PL</item>
+        <item>RU</item>
+        <item>ES</item>
+        <item>KR</item>
+        <item>BY</item>
+        <item>KZ</item>
+        <item>KG</item>
+        <item>TJ</item>
+        <item>UZ</item>
+        <item>TM</item>
+        <item>GE</item>
+        <item>AM</item>
+        <item>AZ</item>
+        <item>MD</item>
+        <item>MN</item>
+        <item>NL</item>
         <item>UA</item>
         <item>DK</item>
         <item>SE</item>
+        <item>CZ</item>
+        <item>HU</item>
     </string-array>
     <!--These region support face unlock-->
     <string-array name="support_face_unlock_region_dom">
