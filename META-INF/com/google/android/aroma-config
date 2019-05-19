@@ -21,18 +21,9 @@ ini_set("text_about", 			"INFO");
 ini_set("text_quit_msg", 		"DO YOUR REALLY WANT TO LEAVE THE XASP UTILITY?");
 ###################
 anisplash(
-3,
+10,
 "themes/blacknwhite/1",1,
-"themes/blacknwhite/2",1,
-"themes/blacknwhite/1",1,
-"themes/blacknwhite/2",1,
-"themes/blacknwhite/1",1,
-"themes/blacknwhite/2",1,
-"themes/blacknwhite/1",1,
-"themes/blacknwhite/2",1,
-"themes/blacknwhite/1",1,
-"themes/blacknwhite/2",1,
-"themes/blacknwhite/1",1
+"themes/blacknwhite/2",1
 );
 ###################
 gotolabel("MENU");
@@ -433,6 +424,10 @@ endif;
 ###################
 anisplash(
 1,
+"themes/blacknwhite/1",1,
+"themes/blacknwhite/2",1,
+"themes/blacknwhite/1",1,
+"themes/blacknwhite/2",1,
 "themes/blacknwhite/1",1,
 "themes/blacknwhite/2",1,
 "themes/blacknwhite/1",1,
