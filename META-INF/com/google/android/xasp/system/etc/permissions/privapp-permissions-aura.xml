@@ -1,0 +1,9 @@
+<permissions>
+    <privapp-permissions package="com.razer.chromaconfigurator">
+        <permission name="razer.permission.THS"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.razerzone.setupwizard">
+        <permission name="razer.permission.THS"/>
+    </privapp-permissions>
+</permissions>
