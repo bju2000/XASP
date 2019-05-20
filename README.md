@@ -17,7 +17,7 @@
   
 ##      PATCH REQUIREMENTS
 
-##### Android 9.0 / SDK 28 (AOSP ARM64)
+##### Android 9.0 / SDK 28 (AOSP/MIUI ARM64)
 ##### Snapdragon 835, 845 or 855 (Min. 4GB RAM)
 
 
