@@ -1,7 +1,7 @@
 show_progress(1.00,5);
 set_progress(0.00);
 ######################################
-ui_print("---STARTING XASP");
+ui_print("-STARTING XASP");
 ######################################
 run_program("/sbin/sync");
 run_program("/sbin/sleep","1");
@@ -166,7 +166,7 @@ run_program("/sbin/busybox","unzip","/tmp/gapps/gapps.zip","META-INF/com/google/
 run_program("/sbin/busybox","sh","/tmp/gapps/META-INF/com/google/android/update-binary","dummy","1","/tmp/gapps/gapps.zip");
 set_progress(0.96);
 ######################################
-ui_print("--FILESYSTEM REMOUNTING");
+ui_print("---FILESYSTEM REMOUNTING");
 ######################################
 run_program("/sbin/sleep","1");
 run_program("/sbin/busybox","mount","/system");
@@ -175,7 +175,7 @@ run_program("/sbin/busybox","mount","/cache");
 run_program("/sbin/sleep","1");
 set_progress(0.97);
 ######################################
-ui_print("--FILESYSTEM TRIMMING");
+ui_print("---FILESYSTEM TRIMMING");
 ######################################
 ui_print("-TRIMMING SYSTEM");
 run_program("/sbin/busybox","fstrim","-v","/system");
@@ -185,7 +185,7 @@ ui_print("-TRIMMING DATA");
 run_program("/sbin/busybox","fstrim","-v","/data");
 set_progress(0.98);
 ######################################
-ui_print("--FILESYSTEM REMOUNTING");
+ui_print("---FILESYSTEM REMOUNTING");
 ######################################
 run_program("/sbin/sleep","1");
 ifelse(is_mounted("/cache")=="/cache",unmount("/cache"));
@@ -193,6 +193,6 @@ ifelse(is_mounted("/data")=="/data",unmount("/data"));
 ifelse(is_mounted("/system")=="/system",unmount("/system"));
 set_progress(0.99);
 ########################################
-ui_print("---XASP COMPLETED");
+ui_print("----XASP COMPLETED");
 ######################################
 set_progress(1.00);
